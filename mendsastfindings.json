@@ -1,0 +1,3624 @@
+[
+  {
+    "projectName": "NodeGoat",
+    "reportInformation": {
+      "author": "Philippe Ferron",
+      "company": "",
+      "email": "philippe.ferron@whitesourcesoftware.com",
+      "description": ""
+    },
+    "stats": {
+      "duration": "00:00:01",
+      "totalVulnerabilities": 16,
+      "totalFiles": 49,
+      "testedFiles": 49,
+      "totalLines": 1080,
+      "testedLines": 1080,
+      "critical": 0,
+      "high": 3,
+      "medium": 12,
+      "low": 1
+    },
+    "status": "Finished",
+    "statusMessage": "Scan finished",
+    "pathExclusions": [
+      "\\\\bin\\\\",
+      "\\\\build\\\\",
+      "\\\\dist\\\\",
+      "\\\\vendor\\\\",
+      "\\\\out\\\\",
+      "\\\\release\\\\",
+      "\\\\target\\\\",
+      "\\\\test(s?)\\\\",
+      "\\\\__test(s?)__\\\\",
+      "\\\\__spec(s?)__\\\\",
+      "\\.test\\.(js|jsx|xsjx)",
+      "\\.spec\\.(js|jsx|xsjx)",
+      "\\\\e2e\\\\",
+      "\\\\cypress\\\\",
+      "\\\\node_modules\\\\",
+      "\\\\locales\\\\",
+      "\\\\\\.vscode\\\\",
+      "\\\\\\.idea\\\\",
+      "\\\\\\.git\\\\",
+      "\\\\\\.github\\\\"
+    ],
+    "results": [
+      {
+        "engineId": 8,
+        "language": "JavaScript / Node.js",
+        "results": [
+          {
+            "type": {
+              "id": 5,
+              "sarif": "js-cmd-inj",
+              "order": 0,
+              "name": "Command Injection",
+              "risk": "High",
+              "description": "Command Injection vulnerability occurs when an application passes unsafe data supplied by the user (forms, cookies, HTTP headers etc.) to a system shell. In this attack operating system commands supplied by the attacker are usually executed with the privileges of the vulnerable application. Successful shell command execution attack can result in arbitrary command execution and a full system compromise",
+              "recommendation": [
+                "Blacklisting forbidden character sequences",
+                "Whitelisting allowed character sequences",
+                "Restricting permissions on operating system commands",
+                "Filtering out command directory names"
+              ],
+              "references": [
+                "https://www.owasp.org/index.php/Command_Injection"
+              ],
+              "cwe": {
+                "id": "CWE-78",
+                "title": "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')",
+                "url": "https://cwe.mitre.org/data/definitions/78.html"
+              },
+              "pcidss": {
+                "section": "6.5.1",
+                "title": "PCI DSS 6.5.1 - Injection Flaws"
+              },
+              "nist": {
+                "control": "SI-10",
+                "priority": "P1",
+                "title": "SI-10: Information Input Validation",
+                "url": "https://nvd.nist.gov/800-53/Rev5/control/SI-10"
+              },
+              "hipaa": {
+                "control": "164.312 (a)(1)",
+                "title": "164.312 (a)(1): Standard: Access control"
+              },
+              "hitrust": {
+                "control": "10.b",
+                "title": "10.b - Input Data Validation (Level 1 Implementation)"
+              },
+              "owasp": {
+                "index": "A1",
+                "title": "A1: Injection",
+                "url": "https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A1-Injection"
+              },
+              "owasp2021": {
+                "index": "A3",
+                "title": "A3 - Injection",
+                "url": "https://owasp.org/Top10/A03_2021-Injection/"
+              },
+              "capec": {
+                "id": "88",
+                "title": "CAPEC-88: OS Command Injection",
+                "url": "https://capec.mitre.org/data/definitions/88.html"
+              },
+              "sansTop25": {
+                "rank": 5,
+                "title": "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+              }
+            },
+            "count": 0,
+            "remediationCount": 0,
+            "countWithFP": 0,
+            "Findings": null
+          },
+          {
+            "type": {
+              "id": 0,
+              "sarif": "js-sqli",
+              "order": 1,
+              "name": "SQL Injection",
+              "risk": "High",
+              "description": "SQL Injection vulnerability occurs when a user input is used in the construction of an SQL query without proper user input string neutralization (sanitization). A successful SQL injection exploit can read sensitive data from the database, modify database data (Insert/Update/Delete), execute administration operations on the database (such as shutdown of the DBMS), recover the content of a given file present on the DBMS file system or in some cases issue commands to the operating system",
+              "recommendation": [
+                "Using prepared statements (with parameterized queries)",
+                "Correct filtering (escaping) of string literal escape characters in SQL statements, like single quote ('), double quote (\"), backslash (\\) and the NULL byte",
+                "Checking parameters for valid representation for the give type (integer, float or boolean)",
+                "Correct database permissions on logon, which restricts web application or user access to unnecessary data"
+              ],
+              "references": [
+                "https://owasp.org/www-community/attacks/SQL_Injection",
+                "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html"
+              ],
+              "cwe": {
+                "id": "CWE-89",
+                "title": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+                "url": "https://cwe.mitre.org/data/definitions/89.html"
+              },
+              "pcidss": {
+                "section": "6.5.1",
+                "title": "PCI DSS 6.5.1 - Injection Flaws"
+              },
+              "nist": {
+                "control": "SI-10",
+                "priority": "P1",
+                "title": "SI-10: Information Input Validation",
+                "url": "https://nvd.nist.gov/800-53/Rev5/control/SI-10"
+              },
+              "hipaa": {
+                "control": "164.312 (a)(1)",
+                "title": "164.312 (a)(1): Standard: Access control"
+              },
+              "hitrust": {
+                "control": "10.b",
+                "title": "10.b - Input Data Validation (Level 1 Implementation)"
+              },
+              "owasp": {
+                "index": "A1",
+                "title": "A1: Injection",
+                "url": "https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A1-Injection"
+              },
+              "owasp2021": {
+                "index": "A3",
+                "title": "A3 - Injection",
+                "url": "https://owasp.org/Top10/A03_2021-Injection/"
+              },
+              "capec": {
+                "id": "66",
+                "title": "CAPEC-66: SQL Injection",
+                "url": "https://capec.mitre.org/data/definitions/66.html"
+              },
+              "sansTop25": {
+                "rank": 3,
+                "title": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')"
+              }
+            },
+            "count": 0,
+            "remediationCount": 0,
+            "countWithFP": 0,
+            "Findings": null
+          },
+          {
+            "type": {
+              "id": 3,
+              "sarif": "js-code-inj",
+              "order": 2,
+              "name": "Code Injection",
+              "risk": "High",
+              "description": "The application constructs all or part of a code segment using externally-influenced input from an upstream component, but it does not neutralize or incorrectly neutralizes special elements that could modify the syntax or behavior of the intended code segment. When the application allows a user's input to contain code syntax, it might be possible for an attacker to craft the code in such a way that it will alter the intended control flow of the application. Such an alteration could lead to arbitrary code execution",
+              "recommendation": [
+                "Assume all input is malicious. Use an \"accept known good\" input validation strategy, i.e., use a whitelist of acceptable inputs that strictly conform to specifications. Rejecting any input that does not strictly conform to specifications, or transforming it into something that does",
+                "When performing input validation, consider all potentially relevant properties, including length, type of input, the full range of acceptable values, missing or extra inputs, syntax, consistency across related fields, and conformance to business rules",
+                "To reduce the likelihood of code injection, stringent whitelists that limit which constructs are allowed should be used. If the code that invokes a function is dynamically constructed, then verifying that the input is alphanumeric might be insufficient"
+              ],
+              "references": [
+                "https://owasp.org/www-community/attacks/Code_Injection"
+              ],
+              "cwe": {
+                "id": "CWE-94",
+                "title": "CWE-94: Improper Control of Generation of Code ('Code Injection')",
+                "url": "https://cwe.mitre.org/data/definitions/94.html"
+              },
+              "pcidss": {
+                "section": "6.5.1",
+                "title": "PCI DSS 6.5.1 - Injection Flaws"
+              },
+              "nist": {
+                "control": "SI-10",
+                "priority": "P1",
+                "title": "SI-10: Information Input Validation",
+                "url": "https://nvd.nist.gov/800-53/Rev5/control/SI-10"
+              },
+              "hipaa": {
+                "control": "",
+                "title": ""
+              },
+              "hitrust": {
+                "control": "10.b",
+                "title": "10.b - Input Data Validation (Level 1 Implementation)"
+              },
+              "owasp": {
+                "index": "A1",
+                "title": "A1: Injection",
+                "url": "https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A1-Injection"
+              },
+              "owasp2021": {
+                "index": "A3",
+                "title": "A3 - Injection",
+                "url": "https://owasp.org/Top10/A03_2021-Injection/"
+              },
+              "capec": {
+                "id": "242",
+                "title": "CAPEC-242: Code Injection",
+                "url": "https://capec.mitre.org/data/definitions/242.html"
+              },
+              "sansTop25": {
+                "rank": 23,
+                "title": "CWE-94: Improper Control of Generation of Code ('Code Injection')"
+              }
+            },
+            "count": 3,
+            "remediationCount": 0,
+            "countWithFP": 3,
+            "Findings": [
+              {
+                "finding": {
+                  "id": "e8f4f07b-4676-4448-9632-3a0d93dba42d",
+                  "scanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                  "appId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                  "orgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                  "groupType": "sink",
+                  "sharedStep": {
+                    "Name": "eval ",
+                    "Kind": "",
+                    "File": "app/routes/contributions.js",
+                    "Snippet": "const roth = eval(req.body.roth);",
+                    "SnippetSignature": "ae31e1047c07331ee61d04532096dca6",
+                    "StartLine": 30,
+                    "EndLine": 39,
+                    "Line": 34
+                  },
+                  "type": {
+                    "Id": 3,
+                    "Name": "Code Injection",
+                    "EngineId": 8,
+                    "Language": "JavaScript / Node.js"
+                  },
+                  "description": "Use of eval function can result in Code Injection vulnerability.",
+                  "severity": "High",
+                  "isBaseLine": true,
+                  "createdTime": "2024-01-23T17:19:07.892Z",
+                  "issues": {
+                    "Jira": {
+                      "IssueId": "",
+                      "Project": ""
+                    },
+                    "Azure": {
+                      "WorkItemId": 0,
+                      "Project": ""
+                    }
+                  },
+                  "comments": null,
+                  "rating": {
+                    "Severity": 8.2,
+                    "Confidence": 10,
+                    "Age": 0,
+                    "Overall": 6.56
+                  },
+                  "adaptations": {
+                    "CustomSeverity": "",
+                    "IsSuppressed": false,
+                    "SuppressedBy": "",
+                    "SuppressionTime": "0001-01-01T00:00:00Z",
+                    "SuppressionMessage": "",
+                    "IsReviewed": false
+                  }
+                },
+                "DataFlows": [
+                  {
+                    "Overview": {
+                      "Id": "6dede492-aa3f-4881-8184-fdaa66ba63ee",
+                      "Signature": "6bafcdf937e7bb79b91a858e53cd9111",
+                      "FindingId": "e8f4f07b-4676-4448-9632-3a0d93dba42d",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "CreatedTime": "2024-01-23T17:19:07.892Z",
+                      "Input": {
+                        "Source": "req.body",
+                        "Kind": "",
+                        "Flow": [
+                          {
+                            "Name": "req.body",
+                            "Kind": "",
+                            "File": "app/routes/contributions.js",
+                            "Snippet": "const roth = eval(req.body.roth);"
+                          }
+                        ]
+                      },
+                      "Sink": {
+                        "Name": "eval ",
+                        "Kind": "",
+                        "File": "app/routes/contributions.js",
+                        "Snippet": "const roth = eval(req.body.roth);"
+                      },
+                      "FunctionCalls": [
+                        {
+                          "Name": "eval",
+                          "Kind": "",
+                          "File": "app/routes/contributions.js",
+                          "Snippet": "const roth = eval(req.body.roth);"
+                        }
+                      ],
+                      "Filter": {
+                        "IsFiltered": false,
+                        "FilterTypes": []
+                      }
+                    },
+                    "Snapshot": {
+                      "Id": "f1d8b343-3f54-496c-8bad-d9dd8c80a9be",
+                      "Signature": "6bafcdf937e7bb79b91a858e53cd9111",
+                      "DataFlowId": "6dede492-aa3f-4881-8184-fdaa66ba63ee",
+                      "ScanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                      "FindingId": "e8f4f07b-4676-4448-9632-3a0d93dba42d",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "DataModelVersion": 2,
+                      "CreatedTime": "2024-01-23T17:33:56.005Z",
+                      "Rating": {
+                        "Confidence": 10,
+                        "Age": 2,
+                        "Overall": 8.76923076923077
+                      },
+                      "SnippetSignature": "63f5ed7598a3136c63cbc1b4f4caeb76",
+                      "SinkLine": 34,
+                      "InputFlowSnapshots": [
+                        {
+                          "StartLine": 30,
+                          "EndLine": 39,
+                          "Line": 34
+                        }
+                      ],
+                      "FunctionCallSnapshots": [
+                        {
+                          "StartLine": 30,
+                          "EndLine": 39,
+                          "Line": 34
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "Overview": {
+                      "Id": "fbef5186-44d8-416f-ab49-acbb157c3b6e",
+                      "Signature": "6eaa1898dce09eba4aca086adb81409d",
+                      "FindingId": "e8f4f07b-4676-4448-9632-3a0d93dba42d",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "CreatedTime": "2024-01-23T17:19:07.892Z",
+                      "Input": {
+                        "Source": "req.body",
+                        "Kind": "",
+                        "Flow": [
+                          {
+                            "Name": "req.body",
+                            "Kind": "",
+                            "File": "app/routes/contributions.js",
+                            "Snippet": "const roth = eval(req.body.roth);"
+                          },
+                          {
+                            "Name": "roth",
+                            "Kind": "",
+                            "File": "app/routes/contributions.js",
+                            "Snippet": "const roth = eval(req.body.roth);"
+                          }
+                        ]
+                      },
+                      "Sink": {
+                        "Name": "eval ",
+                        "Kind": "",
+                        "File": "app/routes/contributions.js",
+                        "Snippet": "const roth = eval(req.body.roth);"
+                      },
+                      "FunctionCalls": [
+                        {
+                          "Name": "eval",
+                          "Kind": "",
+                          "File": "app/routes/contributions.js",
+                          "Snippet": "const roth = eval(req.body.roth);"
+                        }
+                      ],
+                      "Filter": {
+                        "IsFiltered": false,
+                        "FilterTypes": []
+                      }
+                    },
+                    "Snapshot": {
+                      "Id": "e9120047-2f09-4804-96f8-8c0a83aeb67e",
+                      "Signature": "6eaa1898dce09eba4aca086adb81409d",
+                      "DataFlowId": "fbef5186-44d8-416f-ab49-acbb157c3b6e",
+                      "ScanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                      "FindingId": "e8f4f07b-4676-4448-9632-3a0d93dba42d",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "DataModelVersion": 2,
+                      "CreatedTime": "2024-01-23T17:33:56.005Z",
+                      "Rating": {
+                        "Confidence": 10,
+                        "Age": 2,
+                        "Overall": 8.76923076923077
+                      },
+                      "SnippetSignature": "4909c9f74029aa90bc5cfff7c9ab6f7e",
+                      "SinkLine": 34,
+                      "InputFlowSnapshots": [
+                        {
+                          "StartLine": 30,
+                          "EndLine": 39,
+                          "Line": 34
+                        },
+                        {
+                          "StartLine": 30,
+                          "EndLine": 39,
+                          "Line": 34
+                        }
+                      ],
+                      "FunctionCallSnapshots": [
+                        {
+                          "StartLine": 30,
+                          "EndLine": 39,
+                          "Line": 34
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "finding": {
+                  "id": "0eec658d-d836-4ac9-8638-03cf8ce092c3",
+                  "scanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                  "appId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                  "orgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                  "groupType": "sink",
+                  "sharedStep": {
+                    "Name": "eval ",
+                    "Kind": "",
+                    "File": "app/routes/contributions.js",
+                    "Snippet": "const afterTax = eval(req.body.afterTax);",
+                    "SnippetSignature": "cd663fe76bda7dfd0e8b0a6bef919cc6",
+                    "StartLine": 29,
+                    "EndLine": 38,
+                    "Line": 33
+                  },
+                  "type": {
+                    "Id": 3,
+                    "Name": "Code Injection",
+                    "EngineId": 8,
+                    "Language": "JavaScript / Node.js"
+                  },
+                  "description": "Use of eval function can result in Code Injection vulnerability.",
+                  "severity": "High",
+                  "isBaseLine": true,
+                  "createdTime": "2024-01-23T17:19:07.892Z",
+                  "issues": {
+                    "Jira": {
+                      "IssueId": "",
+                      "Project": ""
+                    },
+                    "Azure": {
+                      "WorkItemId": 0,
+                      "Project": ""
+                    }
+                  },
+                  "comments": null,
+                  "rating": {
+                    "Severity": 8.2,
+                    "Confidence": 10,
+                    "Age": 0,
+                    "Overall": 6.56
+                  },
+                  "adaptations": {
+                    "CustomSeverity": "",
+                    "IsSuppressed": false,
+                    "SuppressedBy": "",
+                    "SuppressionTime": "0001-01-01T00:00:00Z",
+                    "SuppressionMessage": "",
+                    "IsReviewed": false
+                  }
+                },
+                "DataFlows": [
+                  {
+                    "Overview": {
+                      "Id": "ec959f51-3e47-427f-8756-685c7f03eca5",
+                      "Signature": "55fed9c41c3893f9a7dd8c8ebc9ad38d",
+                      "FindingId": "0eec658d-d836-4ac9-8638-03cf8ce092c3",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "CreatedTime": "2024-01-23T17:19:07.892Z",
+                      "Input": {
+                        "Source": "req.body",
+                        "Kind": "",
+                        "Flow": [
+                          {
+                            "Name": "req.body",
+                            "Kind": "",
+                            "File": "app/routes/contributions.js",
+                            "Snippet": "const afterTax = eval(req.body.afterTax);"
+                          }
+                        ]
+                      },
+                      "Sink": {
+                        "Name": "eval ",
+                        "Kind": "",
+                        "File": "app/routes/contributions.js",
+                        "Snippet": "const afterTax = eval(req.body.afterTax);"
+                      },
+                      "FunctionCalls": [
+                        {
+                          "Name": "eval",
+                          "Kind": "",
+                          "File": "app/routes/contributions.js",
+                          "Snippet": "const afterTax = eval(req.body.afterTax);"
+                        }
+                      ],
+                      "Filter": {
+                        "IsFiltered": false,
+                        "FilterTypes": []
+                      }
+                    },
+                    "Snapshot": {
+                      "Id": "f647ea3c-d350-435a-ac16-1f0f88fb607f",
+                      "Signature": "55fed9c41c3893f9a7dd8c8ebc9ad38d",
+                      "DataFlowId": "ec959f51-3e47-427f-8756-685c7f03eca5",
+                      "ScanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                      "FindingId": "0eec658d-d836-4ac9-8638-03cf8ce092c3",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "DataModelVersion": 2,
+                      "CreatedTime": "2024-01-23T17:33:56.005Z",
+                      "Rating": {
+                        "Confidence": 10,
+                        "Age": 2,
+                        "Overall": 8.76923076923077
+                      },
+                      "SnippetSignature": "7291c733894dd8f6bce53bfb6a2eeeef",
+                      "SinkLine": 33,
+                      "InputFlowSnapshots": [
+                        {
+                          "StartLine": 29,
+                          "EndLine": 38,
+                          "Line": 33
+                        }
+                      ],
+                      "FunctionCallSnapshots": [
+                        {
+                          "StartLine": 29,
+                          "EndLine": 38,
+                          "Line": 33
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "Overview": {
+                      "Id": "a797f5f5-14c6-451d-b1ee-43b55bacf87d",
+                      "Signature": "50e1d3dd2ecb3a3c37293054c84c6c06",
+                      "FindingId": "0eec658d-d836-4ac9-8638-03cf8ce092c3",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "CreatedTime": "2024-01-23T17:19:07.892Z",
+                      "Input": {
+                        "Source": "req.body",
+                        "Kind": "",
+                        "Flow": [
+                          {
+                            "Name": "req.body",
+                            "Kind": "",
+                            "File": "app/routes/contributions.js",
+                            "Snippet": "const afterTax = eval(req.body.afterTax);"
+                          },
+                          {
+                            "Name": "afterTax",
+                            "Kind": "",
+                            "File": "app/routes/contributions.js",
+                            "Snippet": "const afterTax = eval(req.body.afterTax);"
+                          }
+                        ]
+                      },
+                      "Sink": {
+                        "Name": "eval ",
+                        "Kind": "",
+                        "File": "app/routes/contributions.js",
+                        "Snippet": "const afterTax = eval(req.body.afterTax);"
+                      },
+                      "FunctionCalls": [
+                        {
+                          "Name": "eval",
+                          "Kind": "",
+                          "File": "app/routes/contributions.js",
+                          "Snippet": "const afterTax = eval(req.body.afterTax);"
+                        }
+                      ],
+                      "Filter": {
+                        "IsFiltered": false,
+                        "FilterTypes": []
+                      }
+                    },
+                    "Snapshot": {
+                      "Id": "5effcbf1-be08-49e4-a750-a5dbd371d671",
+                      "Signature": "50e1d3dd2ecb3a3c37293054c84c6c06",
+                      "DataFlowId": "a797f5f5-14c6-451d-b1ee-43b55bacf87d",
+                      "ScanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                      "FindingId": "0eec658d-d836-4ac9-8638-03cf8ce092c3",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "DataModelVersion": 2,
+                      "CreatedTime": "2024-01-23T17:33:56.005Z",
+                      "Rating": {
+                        "Confidence": 10,
+                        "Age": 2,
+                        "Overall": 8.76923076923077
+                      },
+                      "SnippetSignature": "69f45db11b9fac3ec89ca5624a641706",
+                      "SinkLine": 33,
+                      "InputFlowSnapshots": [
+                        {
+                          "StartLine": 29,
+                          "EndLine": 38,
+                          "Line": 33
+                        },
+                        {
+                          "StartLine": 29,
+                          "EndLine": 38,
+                          "Line": 33
+                        }
+                      ],
+                      "FunctionCallSnapshots": [
+                        {
+                          "StartLine": 29,
+                          "EndLine": 38,
+                          "Line": 33
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "finding": {
+                  "id": "fb6ed79d-7916-479f-93e5-cce0543bc4f7",
+                  "scanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                  "appId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                  "orgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                  "groupType": "sink",
+                  "sharedStep": {
+                    "Name": "eval ",
+                    "Kind": "",
+                    "File": "app/routes/contributions.js",
+                    "Snippet": "const preTax = eval(req.body.preTax);",
+                    "SnippetSignature": "0a2eb251d56fe2b601b63da7ed2e8d1e",
+                    "StartLine": 28,
+                    "EndLine": 37,
+                    "Line": 32
+                  },
+                  "type": {
+                    "Id": 3,
+                    "Name": "Code Injection",
+                    "EngineId": 8,
+                    "Language": "JavaScript / Node.js"
+                  },
+                  "description": "Use of eval function can result in Code Injection vulnerability.",
+                  "severity": "High",
+                  "isBaseLine": true,
+                  "createdTime": "2024-01-23T17:19:07.892Z",
+                  "issues": {
+                    "Jira": {
+                      "IssueId": "",
+                      "Project": ""
+                    },
+                    "Azure": {
+                      "WorkItemId": 0,
+                      "Project": ""
+                    }
+                  },
+                  "comments": null,
+                  "rating": {
+                    "Severity": 8.2,
+                    "Confidence": 10,
+                    "Age": 0,
+                    "Overall": 6.56
+                  },
+                  "adaptations": {
+                    "CustomSeverity": "",
+                    "IsSuppressed": false,
+                    "SuppressedBy": "",
+                    "SuppressionTime": "0001-01-01T00:00:00Z",
+                    "SuppressionMessage": "",
+                    "IsReviewed": false
+                  }
+                },
+                "DataFlows": [
+                  {
+                    "Overview": {
+                      "Id": "f5537c84-c327-4c0f-95ad-7824396639b4",
+                      "Signature": "9de22ff1bcf5d4d3a7258ca63c51a812",
+                      "FindingId": "fb6ed79d-7916-479f-93e5-cce0543bc4f7",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "CreatedTime": "2024-01-23T17:19:07.892Z",
+                      "Input": {
+                        "Source": "req.body",
+                        "Kind": "",
+                        "Flow": [
+                          {
+                            "Name": "req.body",
+                            "Kind": "",
+                            "File": "app/routes/contributions.js",
+                            "Snippet": "const preTax = eval(req.body.preTax);"
+                          }
+                        ]
+                      },
+                      "Sink": {
+                        "Name": "eval ",
+                        "Kind": "",
+                        "File": "app/routes/contributions.js",
+                        "Snippet": "const preTax = eval(req.body.preTax);"
+                      },
+                      "FunctionCalls": [
+                        {
+                          "Name": "eval",
+                          "Kind": "",
+                          "File": "app/routes/contributions.js",
+                          "Snippet": "const preTax = eval(req.body.preTax);"
+                        }
+                      ],
+                      "Filter": {
+                        "IsFiltered": false,
+                        "FilterTypes": []
+                      }
+                    },
+                    "Snapshot": {
+                      "Id": "c22b2529-26d3-43ac-af82-cb3022b79724",
+                      "Signature": "9de22ff1bcf5d4d3a7258ca63c51a812",
+                      "DataFlowId": "f5537c84-c327-4c0f-95ad-7824396639b4",
+                      "ScanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                      "FindingId": "fb6ed79d-7916-479f-93e5-cce0543bc4f7",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "DataModelVersion": 2,
+                      "CreatedTime": "2024-01-23T17:33:56.005Z",
+                      "Rating": {
+                        "Confidence": 10,
+                        "Age": 2,
+                        "Overall": 8.76923076923077
+                      },
+                      "SnippetSignature": "0236d70239773ed3d5a2a478e3fdcdca",
+                      "SinkLine": 32,
+                      "InputFlowSnapshots": [
+                        {
+                          "StartLine": 28,
+                          "EndLine": 37,
+                          "Line": 32
+                        }
+                      ],
+                      "FunctionCallSnapshots": [
+                        {
+                          "StartLine": 28,
+                          "EndLine": 37,
+                          "Line": 32
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "Overview": {
+                      "Id": "a67b9172-9806-4c7a-bc48-cbfabf1c9a1c",
+                      "Signature": "44e1ff2933f0c48c4209f076a1c05713",
+                      "FindingId": "fb6ed79d-7916-479f-93e5-cce0543bc4f7",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "CreatedTime": "2024-01-23T17:19:07.892Z",
+                      "Input": {
+                        "Source": "req.body",
+                        "Kind": "",
+                        "Flow": [
+                          {
+                            "Name": "req.body",
+                            "Kind": "",
+                            "File": "app/routes/contributions.js",
+                            "Snippet": "const preTax = eval(req.body.preTax);"
+                          },
+                          {
+                            "Name": "preTax",
+                            "Kind": "",
+                            "File": "app/routes/contributions.js",
+                            "Snippet": "const preTax = eval(req.body.preTax);"
+                          }
+                        ]
+                      },
+                      "Sink": {
+                        "Name": "eval ",
+                        "Kind": "",
+                        "File": "app/routes/contributions.js",
+                        "Snippet": "const preTax = eval(req.body.preTax);"
+                      },
+                      "FunctionCalls": [
+                        {
+                          "Name": "eval",
+                          "Kind": "",
+                          "File": "app/routes/contributions.js",
+                          "Snippet": "const preTax = eval(req.body.preTax);"
+                        }
+                      ],
+                      "Filter": {
+                        "IsFiltered": false,
+                        "FilterTypes": []
+                      }
+                    },
+                    "Snapshot": {
+                      "Id": "ae34e93e-2773-497e-bc31-a2f16ae9ecba",
+                      "Signature": "44e1ff2933f0c48c4209f076a1c05713",
+                      "DataFlowId": "a67b9172-9806-4c7a-bc48-cbfabf1c9a1c",
+                      "ScanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                      "FindingId": "fb6ed79d-7916-479f-93e5-cce0543bc4f7",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "DataModelVersion": 2,
+                      "CreatedTime": "2024-01-23T17:33:56.005Z",
+                      "Rating": {
+                        "Confidence": 10,
+                        "Age": 2,
+                        "Overall": 8.76923076923077
+                      },
+                      "SnippetSignature": "ceb070cf1fcda99af6520d04c094caf5",
+                      "SinkLine": 32,
+                      "InputFlowSnapshots": [
+                        {
+                          "StartLine": 28,
+                          "EndLine": 37,
+                          "Line": 32
+                        },
+                        {
+                          "StartLine": 28,
+                          "EndLine": 37,
+                          "Line": 32
+                        }
+                      ],
+                      "FunctionCallSnapshots": [
+                        {
+                          "StartLine": 28,
+                          "EndLine": 37,
+                          "Line": 32
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": {
+              "id": 4,
+              "sarif": "js-path-traversal",
+              "order": 3,
+              "name": "Path/Directory Traversal",
+              "risk": "High",
+              "description": "Path/Directory Traversal or file disclosure vulnerability occurs when an external input is used to construct a pathname that is intended to identify a file or a directory located underneath a restricted parent directory. The application does not properly neutralize (sanitize) special elements within the pathname, which can cause the pathname to resolve to a location that is outside of the restricted directory. Successful file disclosure attack can result in sensitive files disclosure, and can often lead to full system compromise",
+              "recommendation": [
+                "Using a whitelist of directories from which files are allowed for download and validating requests based on that list",
+                "Indexing files which are allowed for download and passing only their index numbers as the URL parameter values",
+                "Validating requested file types"
+              ],
+              "references": [
+                "https://owasp.org/www-community/attacks/Path_Traversal"
+              ],
+              "cwe": {
+                "id": "CWE-22",
+                "title": "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+                "url": "https://cwe.mitre.org/data/definitions/22.html"
+              },
+              "pcidss": {
+                "section": "6.5.8",
+                "title": "PCI DSS 6.5.8 - Improper Access Control"
+              },
+              "nist": {
+                "control": "SI-10",
+                "priority": "P1",
+                "title": "SI-10: Information Input Validation",
+                "url": "https://nvd.nist.gov/800-53/Rev5/control/SI-10"
+              },
+              "hipaa": {
+                "control": "164.312 (a)(1)",
+                "title": "164.312 (a)(1): Standard: Access control"
+              },
+              "hitrust": {
+                "control": "10.b",
+                "title": "10.b - Input Data Validation (Level 1 Implementation)"
+              },
+              "owasp": {
+                "index": "A5",
+                "title": "A5: Broken Access Control",
+                "url": "https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A5-Broken_Access_Control"
+              },
+              "owasp2021": {
+                "index": "A1",
+                "title": "A1 - Broken Access Control",
+                "url": "https://owasp.org/Top10/A01_2021-Broken_Access_Control/"
+              },
+              "capec": {
+                "id": "126",
+                "title": "CAPEC-126: Path Traversal",
+                "url": "https://capec.mitre.org/data/definitions/126.html"
+              },
+              "sansTop25": {
+                "rank": 8,
+                "title": "CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')"
+              }
+            },
+            "count": 0,
+            "remediationCount": 0,
+            "countWithFP": 0,
+            "Findings": null
+          },
+          {
+            "type": {
+              "id": 12,
+              "sarif": "js-nosql-inj",
+              "order": 4,
+              "name": "NoSQL Injection",
+              "risk": "High",
+              "description": "NoSQL injection vulnerabilities allow attackers to inject code into commands for databases that don’t use SQL queries, such as MongoDB",
+              "recommendation": [
+                "Assume all input is malicious. Use an \"accept known good\" input validation strategy, i.e., use a whitelist of acceptable inputs that strictly conform to specifications. Reject any input that does not strictly conform to specifications, or transform it into something that does"
+              ],
+              "references": [
+                "https://cwe.mitre.org/data/definitions/943.html"
+              ],
+              "cwe": {
+                "id": "CWE-943",
+                "title": "CWE-943: Improper Neutralization of Special Elements in Data Query Logic",
+                "url": "https://cwe.mitre.org/data/definitions/943.html"
+              },
+              "pcidss": {
+                "section": "",
+                "title": ""
+              },
+              "nist": {
+                "control": "SI-10",
+                "priority": "P1",
+                "title": "SI-10: Information Input Validation",
+                "url": "https://nvd.nist.gov/800-53/Rev5/control/SI-10"
+              },
+              "hipaa": {
+                "control": "164.312 (a)(1)",
+                "title": "164.312 (a)(1): Standard: Access control"
+              },
+              "hitrust": {
+                "control": "10.b",
+                "title": "10.b - Input Data Validation (Level 1 Implementation)"
+              },
+              "owasp": {
+                "index": "A1",
+                "title": "A1: Injection",
+                "url": "https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A1-Injection"
+              },
+              "owasp2021": {
+                "index": "",
+                "title": "",
+                "url": ""
+              },
+              "capec": {
+                "id": "",
+                "title": "",
+                "url": ""
+              },
+              "sansTop25": {
+                "rank": 0,
+                "title": ""
+              }
+            },
+            "count": 0,
+            "remediationCount": 0,
+            "countWithFP": 0,
+            "Findings": null
+          },
+          {
+            "type": {
+              "id": 1,
+              "sarif": "js-dom-xss",
+              "order": 5,
+              "name": "DOM Based Cross-Site Scripting",
+              "risk": "High",
+              "description": "Cross Site Scripting (XSS) vulnerability occurs when an application either does not perform or it performs incorrect neutralization (sanitization) of input data that is included in a web application response. As the result, an attacker is able to inject and execute arbitrary HTML and script code in a user's browser within the context of the vulnerable website. These attacks are often used to steal authentication credentials (e.g. session IDs in cookies). Depending on the vulnerability and the web application, it is also possible to completely alter the web page itself or control the victim's browser",
+              "recommendation": [
+                "Escape HTML before inserting untrusted data into element content",
+                "Escape attribute before inserting untrusted data into HTML common attributes",
+                "Escape JavaScript before inserting untrusted data into JavaScript data values",
+                "Escape CSS and strictly validate before inserting untrusted data into HTML style property values",
+                "Escape URL before inserting untrusted data into HTML URL parameter values",
+                "Use HTML policy engine to validate or clean user-driven HTML in an outbound way",
+                "Use HTTPOnly cookie flag"
+              ],
+              "references": [
+                "https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)"
+              ],
+              "cwe": {
+                "id": "CWE-79",
+                "title": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+                "url": "https://cwe.mitre.org/data/definitions/79.html"
+              },
+              "pcidss": {
+                "section": "6.5.7",
+                "title": "PCI DSS 6.5.7 - Cross-Site Scripting (XSS)"
+              },
+              "nist": {
+                "control": "SI-10",
+                "priority": "P1",
+                "title": "SI-10: Information Input Validation",
+                "url": "https://nvd.nist.gov/800-53/Rev5/control/SI-10"
+              },
+              "hipaa": {
+                "control": "",
+                "title": ""
+              },
+              "hitrust": {
+                "control": "10.b",
+                "title": "10.b - Input Data Validation (Level 1 Implementation)"
+              },
+              "owasp": {
+                "index": "A7",
+                "title": "A7: Cross-Site Scripting (XSS)",
+                "url": "https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A7-Cross-Site_Scripting_(XSS)"
+              },
+              "owasp2021": {
+                "index": "A3",
+                "title": "A3 - Injection",
+                "url": "https://owasp.org/Top10/A03_2021-Injection/"
+              },
+              "capec": {
+                "id": "63",
+                "title": "CAPEC-63: Cross-Site Scripting (XSS)",
+                "url": "https://capec.mitre.org/data/definitions/63.html"
+              },
+              "sansTop25": {
+                "rank": 2,
+                "title": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+              }
+            },
+            "count": 0,
+            "remediationCount": 0,
+            "countWithFP": 0,
+            "Findings": null
+          },
+          {
+            "type": {
+              "id": 2,
+              "sarif": "js-xss",
+              "order": 6,
+              "name": "Cross-Site Scripting",
+              "risk": "High",
+              "description": "Cross Site Scripting (XSS) vulnerability occurs when an application either does not perform or it performs incorrect neutralization (sanitization) of input data that is included in a web application response. As the result, an attacker is able to inject and execute arbitrary HTML and script code in a user's browser within the context of the vulnerable website. These attacks are often used to steal authentication credentials (e.g. session IDs in cookies). Depending on the vulnerability and the web application, it is also possible to completely alter the web page itself or control the victim's browser",
+              "recommendation": [
+                "Escape HTML before inserting untrusted data into element content",
+                "Escape attribute before inserting untrusted data into HTML common attributes",
+                "Escape JavaScript before inserting untrusted data into JavaScript data values",
+                "Escape CSS and strictly validate before inserting untrusted data into HTML style property values",
+                "Escape URL before inserting untrusted data into HTML URL parameter values",
+                "Use HTML policy engine to validate or clean user-driven HTML in an outbound way",
+                "Use HTTPOnly cookie flag"
+              ],
+              "references": [
+                "https://www.owasp.org/index.php/Cross-site_Scripting_(XSS)"
+              ],
+              "cwe": {
+                "id": "CWE-79",
+                "title": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+                "url": "https://cwe.mitre.org/data/definitions/79.html"
+              },
+              "pcidss": {
+                "section": "6.5.7",
+                "title": "PCI DSS 6.5.7 - Cross-Site Scripting (XSS)"
+              },
+              "nist": {
+                "control": "SI-10",
+                "priority": "P1",
+                "title": "SI-10: Information Input Validation",
+                "url": "https://nvd.nist.gov/800-53/Rev5/control/SI-10"
+              },
+              "hipaa": {
+                "control": "",
+                "title": ""
+              },
+              "hitrust": {
+                "control": "10.b",
+                "title": "10.b - Input Data Validation (Level 1 Implementation)"
+              },
+              "owasp": {
+                "index": "A7",
+                "title": "A7: Cross-Site Scripting (XSS)",
+                "url": "https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A7-Cross-Site_Scripting_(XSS)"
+              },
+              "owasp2021": {
+                "index": "A3",
+                "title": "A3 - Injection",
+                "url": "https://owasp.org/Top10/A03_2021-Injection/"
+              },
+              "capec": {
+                "id": "63",
+                "title": "CAPEC-63: Cross-Site Scripting (XSS)",
+                "url": "https://capec.mitre.org/data/definitions/63.html"
+              },
+              "sansTop25": {
+                "rank": 2,
+                "title": "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+              }
+            },
+            "count": 0,
+            "remediationCount": 0,
+            "countWithFP": 0,
+            "Findings": null
+          },
+          {
+            "type": {
+              "id": 16,
+              "sarif": "js-hardcoded-creds",
+              "order": 7,
+              "name": "Hardcoded Password/Credentials",
+              "risk": "Medium",
+              "description": "The application contains hard-coded credentials, such as a password or cryptographic key, which it uses for its own inbound authentication, outbound communication to external components, or encryption of internal data",
+              "recommendation": [
+                "Store passwords, keys, and other credentials outside of the code in a strongly-protected, encrypted configuration file or database that is protected from access by all outsiders, including other local users on the same system. Properly protect the key. If you cannot use encryption to protect the file, then make sure that the permissions are as restrictive as possible"
+              ],
+              "references": [
+                "https://www.owasp.org/index.php/Use_of_hard-coded_password"
+              ],
+              "cwe": {
+                "id": "CWE-798",
+                "title": "CWE-798: Use of Hard-coded Credentials",
+                "url": "https://cwe.mitre.org/data/definitions/798.html"
+              },
+              "pcidss": {
+                "section": "6.5.3",
+                "title": "PCI DSS 6.5.3 - Insecure Cryptographic Storage"
+              },
+              "nist": {
+                "control": "SC-28",
+                "priority": "P1",
+                "title": "SC-28: Protection of Information at Rest",
+                "url": "https://nvd.nist.gov/800-53/Rev5/control/SC-28"
+              },
+              "hipaa": {
+                "control": "164.312 (a)(2)(iv)",
+                "title": "164.312 (a)(2)(iv): Access Control: Encryption and Decryption"
+              },
+              "hitrust": {
+                "control": "",
+                "title": ""
+              },
+              "owasp": {
+                "index": "A3",
+                "title": "A3: Sensitive Data Exposure",
+                "url": "https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A3-Sensitive_Data_Exposure"
+              },
+              "owasp2021": {
+                "index": "A7",
+                "title": "A7 - Identification and Authentication Failures",
+                "url": "https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures/"
+              },
+              "capec": {
+                "id": "",
+                "title": "",
+                "url": ""
+              },
+              "sansTop25": {
+                "rank": 18,
+                "title": "CWE-798: Use of Hard-coded Credentials"
+              }
+            },
+            "count": 4,
+            "remediationCount": 0,
+            "countWithFP": 4,
+            "Findings": [
+              {
+                "finding": {
+                  "id": "f08b6a43-e942-45c7-972c-c15898dfb318",
+                  "scanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                  "appId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                  "orgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                  "groupType": "sink",
+                  "sharedStep": {
+                    "Name": "Hardcoded Credentials ",
+                    "Kind": "",
+                    "File": "app/routes/session.js",
+                    "Snippet": "const invalidPasswordErrorMessage = \"Invalid password\";",
+                    "SnippetSignature": "b748960de41b1af858781e982f5a7425",
+                    "StartLine": 55,
+                    "EndLine": 64,
+                    "Line": 59
+                  },
+                  "type": {
+                    "Id": 16,
+                    "Name": "Hardcoded Password/Credentials",
+                    "EngineId": 8,
+                    "Language": "JavaScript / Node.js"
+                  },
+                  "description": "Some variables and data in code can contain sensitive information.",
+                  "severity": "Medium",
+                  "isBaseLine": true,
+                  "createdTime": "2024-01-23T17:19:07.892Z",
+                  "issues": {
+                    "Jira": {
+                      "IssueId": "",
+                      "Project": ""
+                    },
+                    "Azure": {
+                      "WorkItemId": 0,
+                      "Project": ""
+                    }
+                  },
+                  "comments": null,
+                  "rating": {
+                    "Severity": 6.44,
+                    "Confidence": 4,
+                    "Age": 0,
+                    "Overall": 2.0608000000000004
+                  },
+                  "adaptations": {
+                    "CustomSeverity": "",
+                    "IsSuppressed": false,
+                    "SuppressedBy": "",
+                    "SuppressionTime": "0001-01-01T00:00:00Z",
+                    "SuppressionMessage": "",
+                    "IsReviewed": false
+                  }
+                },
+                "DataFlows": [
+                  {
+                    "Overview": {
+                      "Id": "0e9c0937-1ffc-4bca-9fbd-6dfea8f9628b",
+                      "Signature": "8140e8290585d8055e42920c00dfa782",
+                      "FindingId": "f08b6a43-e942-45c7-972c-c15898dfb318",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "CreatedTime": "2024-01-23T17:19:07.892Z",
+                      "Input": {
+                        "Source": "Hardcoded Credentials - Password",
+                        "Kind": "",
+                        "Flow": [
+                          {
+                            "Name": "Hardcoded Credentials",
+                            "Kind": "",
+                            "File": "app/routes/session.js",
+                            "Snippet": "const invalidPasswordErrorMessage = \"Invalid password\";"
+                          }
+                        ]
+                      },
+                      "Sink": {
+                        "Name": "Hardcoded Credentials ",
+                        "Kind": "",
+                        "File": "app/routes/session.js",
+                        "Snippet": "const invalidPasswordErrorMessage = \"Invalid password\";"
+                      },
+                      "FunctionCalls": [
+                        {
+                          "Name": "Hardcoded credentials - Password",
+                          "Kind": "",
+                          "File": "app/routes/session.js",
+                          "Snippet": "const invalidPasswordErrorMessage = \"Invalid password\";"
+                        }
+                      ],
+                      "Filter": {
+                        "IsFiltered": false,
+                        "FilterTypes": []
+                      }
+                    },
+                    "Snapshot": {
+                      "Id": "18d56a91-ade1-4070-a463-060e3758691e",
+                      "Signature": "8140e8290585d8055e42920c00dfa782",
+                      "DataFlowId": "0e9c0937-1ffc-4bca-9fbd-6dfea8f9628b",
+                      "ScanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                      "FindingId": "f08b6a43-e942-45c7-972c-c15898dfb318",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "DataModelVersion": 2,
+                      "CreatedTime": "2024-01-23T17:33:56.005Z",
+                      "Rating": {
+                        "Confidence": 4,
+                        "Age": 2,
+                        "Overall": 3.6923076923076925
+                      },
+                      "SnippetSignature": "eb3f10a708d808487f9a56265454868c",
+                      "SinkLine": 59,
+                      "InputFlowSnapshots": [
+                        {
+                          "StartLine": 0,
+                          "EndLine": 0,
+                          "Line": 59
+                        }
+                      ],
+                      "FunctionCallSnapshots": [
+                        {
+                          "StartLine": 55,
+                          "EndLine": 64,
+                          "Line": 59
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "finding": {
+                  "id": "19c17f9b-f1d3-4a5c-99a8-3b770bbef78f",
+                  "scanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                  "appId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                  "orgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                  "groupType": "sink",
+                  "sharedStep": {
+                    "Name": "Hardcoded Credentials ",
+                    "Kind": "",
+                    "File": "app/routes/session.js",
+                    "Snippet": "userDAO.validateLogin(userName, password, (err, user) =\u003e {",
+                    "SnippetSignature": "70bb758a7955a5224ee927d6a1512d9a",
+                    "StartLine": 52,
+                    "EndLine": 61,
+                    "Line": 56
+                  },
+                  "type": {
+                    "Id": 16,
+                    "Name": "Hardcoded Password/Credentials",
+                    "EngineId": 8,
+                    "Language": "JavaScript / Node.js"
+                  },
+                  "description": "Some variables and data in code can contain sensitive information.",
+                  "severity": "Medium",
+                  "isBaseLine": true,
+                  "createdTime": "2024-01-23T17:19:07.892Z",
+                  "issues": {
+                    "Jira": {
+                      "IssueId": "",
+                      "Project": ""
+                    },
+                    "Azure": {
+                      "WorkItemId": 0,
+                      "Project": ""
+                    }
+                  },
+                  "comments": null,
+                  "rating": {
+                    "Severity": 6.44,
+                    "Confidence": 4,
+                    "Age": 0,
+                    "Overall": 2.0608000000000004
+                  },
+                  "adaptations": {
+                    "CustomSeverity": "",
+                    "IsSuppressed": false,
+                    "SuppressedBy": "",
+                    "SuppressionTime": "0001-01-01T00:00:00Z",
+                    "SuppressionMessage": "",
+                    "IsReviewed": false
+                  }
+                },
+                "DataFlows": [
+                  {
+                    "Overview": {
+                      "Id": "129081ff-4ec7-454f-8929-e2013a84c70b",
+                      "Signature": "9f5c4c8b55b466e97c0aa5ec75543068",
+                      "FindingId": "19c17f9b-f1d3-4a5c-99a8-3b770bbef78f",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "CreatedTime": "2024-01-23T17:19:07.892Z",
+                      "Input": {
+                        "Source": "Hardcoded Credentials - password",
+                        "Kind": "",
+                        "Flow": [
+                          {
+                            "Name": "Hardcoded Credentials",
+                            "Kind": "",
+                            "File": "app/routes/session.js",
+                            "Snippet": "userDAO.validateLogin(userName, password, (err, user) =\u003e {"
+                          }
+                        ]
+                      },
+                      "Sink": {
+                        "Name": "Hardcoded Credentials ",
+                        "Kind": "",
+                        "File": "app/routes/session.js",
+                        "Snippet": "userDAO.validateLogin(userName, password, (err, user) =\u003e {"
+                      },
+                      "FunctionCalls": [
+                        {
+                          "Name": "Hardcoded credentials - password",
+                          "Kind": "",
+                          "File": "app/routes/session.js",
+                          "Snippet": "userDAO.validateLogin(userName, password, (err, user) =\u003e {"
+                        }
+                      ],
+                      "Filter": {
+                        "IsFiltered": false,
+                        "FilterTypes": []
+                      }
+                    },
+                    "Snapshot": {
+                      "Id": "2899d950-2ef1-4712-9198-5ea3b4f4bfc1",
+                      "Signature": "9f5c4c8b55b466e97c0aa5ec75543068",
+                      "DataFlowId": "129081ff-4ec7-454f-8929-e2013a84c70b",
+                      "ScanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                      "FindingId": "19c17f9b-f1d3-4a5c-99a8-3b770bbef78f",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "DataModelVersion": 2,
+                      "CreatedTime": "2024-01-23T17:33:56.005Z",
+                      "Rating": {
+                        "Confidence": 4,
+                        "Age": 2,
+                        "Overall": 3.6923076923076925
+                      },
+                      "SnippetSignature": "9a3409247970dfc673f88886ca01868d",
+                      "SinkLine": 56,
+                      "InputFlowSnapshots": [
+                        {
+                          "StartLine": 0,
+                          "EndLine": 0,
+                          "Line": 56
+                        }
+                      ],
+                      "FunctionCallSnapshots": [
+                        {
+                          "StartLine": 52,
+                          "EndLine": 61,
+                          "Line": 56
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "finding": {
+                  "id": "0b9af80a-0dec-4df7-aaee-9318de0c5a31",
+                  "scanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                  "appId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                  "orgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                  "groupType": "sink",
+                  "sharedStep": {
+                    "Name": "Hardcoded Credentials ",
+                    "Kind": "",
+                    "File": "app/routes/session.js",
+                    "Snippet": "errors.passwordError = \"Password must be 8 to 18 characters\" +",
+                    "SnippetSignature": "b676e0442ffc099168f843579ddf044c",
+                    "StartLine": 162,
+                    "EndLine": 171,
+                    "Line": 166
+                  },
+                  "type": {
+                    "Id": 16,
+                    "Name": "Hardcoded Password/Credentials",
+                    "EngineId": 8,
+                    "Language": "JavaScript / Node.js"
+                  },
+                  "description": "Some variables and data in code can contain sensitive information.",
+                  "severity": "Medium",
+                  "isBaseLine": true,
+                  "createdTime": "2024-01-23T17:19:07.892Z",
+                  "issues": {
+                    "Jira": {
+                      "IssueId": "",
+                      "Project": ""
+                    },
+                    "Azure": {
+                      "WorkItemId": 0,
+                      "Project": ""
+                    }
+                  },
+                  "comments": null,
+                  "rating": {
+                    "Severity": 6.44,
+                    "Confidence": 4,
+                    "Age": 0,
+                    "Overall": 2.0608000000000004
+                  },
+                  "adaptations": {
+                    "CustomSeverity": "",
+                    "IsSuppressed": false,
+                    "SuppressedBy": "",
+                    "SuppressionTime": "0001-01-01T00:00:00Z",
+                    "SuppressionMessage": "",
+                    "IsReviewed": false
+                  }
+                },
+                "DataFlows": [
+                  {
+                    "Overview": {
+                      "Id": "cbcaa03f-e7f1-42f3-b28d-3c19df8548ca",
+                      "Signature": "61c06163d2ceb41ab3613f5855c6780d",
+                      "FindingId": "0b9af80a-0dec-4df7-aaee-9318de0c5a31",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "CreatedTime": "2024-01-23T17:19:07.892Z",
+                      "Input": {
+                        "Source": "Hardcoded Credentials - password",
+                        "Kind": "",
+                        "Flow": [
+                          {
+                            "Name": "Hardcoded Credentials",
+                            "Kind": "",
+                            "File": "app/routes/session.js",
+                            "Snippet": "errors.passwordError = \"Password must be 8 to 18 characters\" +"
+                          }
+                        ]
+                      },
+                      "Sink": {
+                        "Name": "Hardcoded Credentials ",
+                        "Kind": "",
+                        "File": "app/routes/session.js",
+                        "Snippet": "errors.passwordError = \"Password must be 8 to 18 characters\" +"
+                      },
+                      "FunctionCalls": [
+                        {
+                          "Name": "Hardcoded credentials - password",
+                          "Kind": "",
+                          "File": "app/routes/session.js",
+                          "Snippet": "errors.passwordError = \"Password must be 8 to 18 characters\" +"
+                        }
+                      ],
+                      "Filter": {
+                        "IsFiltered": false,
+                        "FilterTypes": []
+                      }
+                    },
+                    "Snapshot": {
+                      "Id": "00dd2e36-228a-45bd-9088-aabdb8a9d9af",
+                      "Signature": "61c06163d2ceb41ab3613f5855c6780d",
+                      "DataFlowId": "cbcaa03f-e7f1-42f3-b28d-3c19df8548ca",
+                      "ScanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                      "FindingId": "0b9af80a-0dec-4df7-aaee-9318de0c5a31",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "DataModelVersion": 2,
+                      "CreatedTime": "2024-01-23T17:33:56.005Z",
+                      "Rating": {
+                        "Confidence": 4,
+                        "Age": 2,
+                        "Overall": 3.6923076923076925
+                      },
+                      "SnippetSignature": "d56c40b0ec0cea24d9d4fb2e23e4c01c",
+                      "SinkLine": 166,
+                      "InputFlowSnapshots": [
+                        {
+                          "StartLine": 0,
+                          "EndLine": 0,
+                          "Line": 166
+                        }
+                      ],
+                      "FunctionCallSnapshots": [
+                        {
+                          "StartLine": 162,
+                          "EndLine": 171,
+                          "Line": 166
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "finding": {
+                  "id": "0a5f69ed-365f-41b9-ac9b-c0fd3b14b850",
+                  "scanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                  "appId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                  "orgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                  "groupType": "sink",
+                  "sharedStep": {
+                    "Name": "Hardcoded Credentials ",
+                    "Kind": "",
+                    "File": "app/routes/session.js",
+                    "Snippet": "errors.passwordError = \"\";",
+                    "SnippetSignature": "77fcdd492b9002a16f33f64cdf929254",
+                    "StartLine": 145,
+                    "EndLine": 154,
+                    "Line": 149
+                  },
+                  "type": {
+                    "Id": 16,
+                    "Name": "Hardcoded Password/Credentials",
+                    "EngineId": 8,
+                    "Language": "JavaScript / Node.js"
+                  },
+                  "description": "Some variables and data in code can contain sensitive information.",
+                  "severity": "Medium",
+                  "isBaseLine": true,
+                  "createdTime": "2024-01-23T17:19:07.892Z",
+                  "issues": {
+                    "Jira": {
+                      "IssueId": "",
+                      "Project": ""
+                    },
+                    "Azure": {
+                      "WorkItemId": 0,
+                      "Project": ""
+                    }
+                  },
+                  "comments": null,
+                  "rating": {
+                    "Severity": 6.44,
+                    "Confidence": 4,
+                    "Age": 0,
+                    "Overall": 2.0608000000000004
+                  },
+                  "adaptations": {
+                    "CustomSeverity": "",
+                    "IsSuppressed": false,
+                    "SuppressedBy": "",
+                    "SuppressionTime": "0001-01-01T00:00:00Z",
+                    "SuppressionMessage": "",
+                    "IsReviewed": false
+                  }
+                },
+                "DataFlows": [
+                  {
+                    "Overview": {
+                      "Id": "efdaac65-5f4a-473a-a037-47d15569a7d9",
+                      "Signature": "f8ce61cd8444b1183aefda5af124bae3",
+                      "FindingId": "0a5f69ed-365f-41b9-ac9b-c0fd3b14b850",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "CreatedTime": "2024-01-23T17:19:07.892Z",
+                      "Input": {
+                        "Source": "Hardcoded Credentials - password",
+                        "Kind": "",
+                        "Flow": [
+                          {
+                            "Name": "Hardcoded Credentials",
+                            "Kind": "",
+                            "File": "app/routes/session.js",
+                            "Snippet": "errors.passwordError = \"\";"
+                          }
+                        ]
+                      },
+                      "Sink": {
+                        "Name": "Hardcoded Credentials ",
+                        "Kind": "",
+                        "File": "app/routes/session.js",
+                        "Snippet": "errors.passwordError = \"\";"
+                      },
+                      "FunctionCalls": [
+                        {
+                          "Name": "Hardcoded credentials - password",
+                          "Kind": "",
+                          "File": "app/routes/session.js",
+                          "Snippet": "errors.passwordError = \"\";"
+                        }
+                      ],
+                      "Filter": {
+                        "IsFiltered": false,
+                        "FilterTypes": []
+                      }
+                    },
+                    "Snapshot": {
+                      "Id": "6be307b5-64e7-498b-ae60-9c3a1c4adf43",
+                      "Signature": "f8ce61cd8444b1183aefda5af124bae3",
+                      "DataFlowId": "efdaac65-5f4a-473a-a037-47d15569a7d9",
+                      "ScanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                      "FindingId": "0a5f69ed-365f-41b9-ac9b-c0fd3b14b850",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "DataModelVersion": 2,
+                      "CreatedTime": "2024-01-23T17:33:56.005Z",
+                      "Rating": {
+                        "Confidence": 4,
+                        "Age": 2,
+                        "Overall": 3.6923076923076925
+                      },
+                      "SnippetSignature": "d2513535286d6bb44f0394469631bb5e",
+                      "SinkLine": 149,
+                      "InputFlowSnapshots": [
+                        {
+                          "StartLine": 0,
+                          "EndLine": 0,
+                          "Line": 149
+                        }
+                      ],
+                      "FunctionCallSnapshots": [
+                        {
+                          "StartLine": 145,
+                          "EndLine": 154,
+                          "Line": 149
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": {
+              "id": 14,
+              "sarif": "js-weak-rnd",
+              "order": 8,
+              "name": "Weak Pseudo-Random",
+              "risk": "Medium",
+              "description": "When a non-cryptographic PRNG is used in a cryptographic context, it can expose the cryptography to certain types of attacks. Often a pseudo-random number generator (PRNG) is not designed for cryptography. Sometimes a mediocre source of randomness is sufficient or preferable for algorithms that use random numbers. Weak generators generally take less processing power and/or do not use the precious, finite, entropy sources on a system. While such PRNGs might have very useful features, these same features could be used to break the cryptography",
+              "recommendation": [
+                "Use functions or hardware which use a hardware-based random number generation for all crypto"
+              ],
+              "references": [
+                "https://www.owasp.org/index.php/Insecure_Randomness"
+              ],
+              "cwe": {
+                "id": "CWE-338",
+                "title": "CWE-338: Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)",
+                "url": "https://cwe.mitre.org/data/definitions/338.html"
+              },
+              "pcidss": {
+                "section": "6.5.3",
+                "title": "PCI DSS 6.5.3 - Insecure Cryptographic Storage"
+              },
+              "nist": {
+                "control": "SC-13",
+                "priority": "P1",
+                "title": "SC-13: Cryptographic Protection",
+                "url": "https://nvd.nist.gov/800-53/Rev5/control/SC-13"
+              },
+              "hipaa": {
+                "control": "164.312 (a)(2)(iv)",
+                "title": "164.312 (a)(2)(iv): Access Control: Encryption and Decryption"
+              },
+              "hitrust": {
+                "control": "",
+                "title": ""
+              },
+              "owasp": {
+                "index": "A3",
+                "title": "A3: Sensitive Data Exposure",
+                "url": "https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A3-Sensitive_Data_Exposure"
+              },
+              "owasp2021": {
+                "index": "A2",
+                "title": "A2 - Cryptographic Failures",
+                "url": "https://owasp.org/Top10/A02_2021-Cryptographic_Failures/"
+              },
+              "capec": {
+                "id": "97",
+                "title": "CAPEC-97: Cryptanalysis",
+                "url": "https://capec.mitre.org/data/definitions/97.html"
+              },
+              "sansTop25": {
+                "rank": 0,
+                "title": ""
+              }
+            },
+            "count": 8,
+            "remediationCount": 0,
+            "countWithFP": 8,
+            "Findings": [
+              {
+                "finding": {
+                  "id": "58ed0e4b-bc3b-4b47-889b-bd7e3ab59212",
+                  "scanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                  "appId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                  "orgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                  "groupType": "sink",
+                  "sharedStep": {
+                    "Name": "Weak Random ",
+                    "Kind": "",
+                    "File": "app/routes/session.js",
+                    "Snippet": "const funds = Math.floor((Math.random() * 40) + 1);",
+                    "SnippetSignature": "f22c8a697b105982d74926ef4d03ac83",
+                    "StartLine": 13,
+                    "EndLine": 22,
+                    "Line": 17
+                  },
+                  "type": {
+                    "Id": 14,
+                    "Name": "Weak Pseudo-Random",
+                    "EngineId": 8,
+                    "Language": "JavaScript / Node.js"
+                  },
+                  "description": "It is not advised to use weak random generator methods.",
+                  "severity": "Medium",
+                  "isBaseLine": true,
+                  "createdTime": "2024-01-23T17:19:07.892Z",
+                  "issues": {
+                    "Jira": {
+                      "IssueId": "",
+                      "Project": ""
+                    },
+                    "Azure": {
+                      "WorkItemId": 0,
+                      "Project": ""
+                    }
+                  },
+                  "comments": null,
+                  "rating": {
+                    "Severity": 5.536,
+                    "Confidence": 10,
+                    "Age": 0,
+                    "Overall": 4.4288
+                  },
+                  "adaptations": {
+                    "CustomSeverity": "",
+                    "IsSuppressed": false,
+                    "SuppressedBy": "",
+                    "SuppressionTime": "0001-01-01T00:00:00Z",
+                    "SuppressionMessage": "",
+                    "IsReviewed": false
+                  }
+                },
+                "DataFlows": [
+                  {
+                    "Overview": {
+                      "Id": "3dd73f9b-67a0-4e0d-b7f2-043188608c86",
+                      "Signature": "2a03ce135a90cef7dbac94a9a43375d0",
+                      "FindingId": "58ed0e4b-bc3b-4b47-889b-bd7e3ab59212",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "CreatedTime": "2024-01-23T17:19:07.892Z",
+                      "Input": {
+                        "Source": "Weak Random",
+                        "Kind": "",
+                        "Flow": [
+                          {
+                            "Name": "Weak Random",
+                            "Kind": "",
+                            "File": "app/routes/session.js",
+                            "Snippet": "const funds = Math.floor((Math.random() * 40) + 1);"
+                          }
+                        ]
+                      },
+                      "Sink": {
+                        "Name": "Weak Random ",
+                        "Kind": "",
+                        "File": "app/routes/session.js",
+                        "Snippet": "const funds = Math.floor((Math.random() * 40) + 1);"
+                      },
+                      "FunctionCalls": [
+                        {
+                          "Name": "Weak Random - Math.random",
+                          "Kind": "",
+                          "File": "app/routes/session.js",
+                          "Snippet": "const funds = Math.floor((Math.random() * 40) + 1);"
+                        }
+                      ],
+                      "Filter": {
+                        "IsFiltered": false,
+                        "FilterTypes": []
+                      }
+                    },
+                    "Snapshot": {
+                      "Id": "0454d8ef-da0b-40a8-bfaf-1e61f0162055",
+                      "Signature": "2a03ce135a90cef7dbac94a9a43375d0",
+                      "DataFlowId": "3dd73f9b-67a0-4e0d-b7f2-043188608c86",
+                      "ScanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                      "FindingId": "58ed0e4b-bc3b-4b47-889b-bd7e3ab59212",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "DataModelVersion": 2,
+                      "CreatedTime": "2024-01-23T17:33:56.005Z",
+                      "Rating": {
+                        "Confidence": 10,
+                        "Age": 2,
+                        "Overall": 8.76923076923077
+                      },
+                      "SnippetSignature": "8a991754e071098f4aa8e8bd0a84d633",
+                      "SinkLine": 17,
+                      "InputFlowSnapshots": [
+                        {
+                          "StartLine": 0,
+                          "EndLine": 0,
+                          "Line": 17
+                        }
+                      ],
+                      "FunctionCallSnapshots": [
+                        {
+                          "StartLine": 13,
+                          "EndLine": 22,
+                          "Line": 17
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "finding": {
+                  "id": "0fad5d8f-b3a3-46c1-93ab-0264ff4fe8e2",
+                  "scanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                  "appId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                  "orgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                  "groupType": "sink",
+                  "sharedStep": {
+                    "Name": "Weak Random ",
+                    "Kind": "",
+                    "File": "app/routes/session.js",
+                    "Snippet": "const stocks = Math.floor((Math.random() * 40) + 1);",
+                    "SnippetSignature": "52c33f89aa9e8f69b89213155e5c4dbb",
+                    "StartLine": 12,
+                    "EndLine": 21,
+                    "Line": 16
+                  },
+                  "type": {
+                    "Id": 14,
+                    "Name": "Weak Pseudo-Random",
+                    "EngineId": 8,
+                    "Language": "JavaScript / Node.js"
+                  },
+                  "description": "It is not advised to use weak random generator methods.",
+                  "severity": "Medium",
+                  "isBaseLine": true,
+                  "createdTime": "2024-01-23T17:19:07.892Z",
+                  "issues": {
+                    "Jira": {
+                      "IssueId": "",
+                      "Project": ""
+                    },
+                    "Azure": {
+                      "WorkItemId": 0,
+                      "Project": ""
+                    }
+                  },
+                  "comments": null,
+                  "rating": {
+                    "Severity": 5.536,
+                    "Confidence": 10,
+                    "Age": 0,
+                    "Overall": 4.4288
+                  },
+                  "adaptations": {
+                    "CustomSeverity": "",
+                    "IsSuppressed": false,
+                    "SuppressedBy": "",
+                    "SuppressionTime": "0001-01-01T00:00:00Z",
+                    "SuppressionMessage": "",
+                    "IsReviewed": false
+                  }
+                },
+                "DataFlows": [
+                  {
+                    "Overview": {
+                      "Id": "78c15889-73c8-4a7d-8b04-93ba899c7f3d",
+                      "Signature": "b2596cb38d0ea21f5c7402b9440cadd1",
+                      "FindingId": "0fad5d8f-b3a3-46c1-93ab-0264ff4fe8e2",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "CreatedTime": "2024-01-23T17:19:07.892Z",
+                      "Input": {
+                        "Source": "Weak Random",
+                        "Kind": "",
+                        "Flow": [
+                          {
+                            "Name": "Weak Random",
+                            "Kind": "",
+                            "File": "app/routes/session.js",
+                            "Snippet": "const stocks = Math.floor((Math.random() * 40) + 1);"
+                          }
+                        ]
+                      },
+                      "Sink": {
+                        "Name": "Weak Random ",
+                        "Kind": "",
+                        "File": "app/routes/session.js",
+                        "Snippet": "const stocks = Math.floor((Math.random() * 40) + 1);"
+                      },
+                      "FunctionCalls": [
+                        {
+                          "Name": "Weak Random - Math.random",
+                          "Kind": "",
+                          "File": "app/routes/session.js",
+                          "Snippet": "const stocks = Math.floor((Math.random() * 40) + 1);"
+                        }
+                      ],
+                      "Filter": {
+                        "IsFiltered": false,
+                        "FilterTypes": []
+                      }
+                    },
+                    "Snapshot": {
+                      "Id": "b439ce02-55cf-4614-ba64-1f4bd5daa38a",
+                      "Signature": "b2596cb38d0ea21f5c7402b9440cadd1",
+                      "DataFlowId": "78c15889-73c8-4a7d-8b04-93ba899c7f3d",
+                      "ScanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                      "FindingId": "0fad5d8f-b3a3-46c1-93ab-0264ff4fe8e2",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "DataModelVersion": 2,
+                      "CreatedTime": "2024-01-23T17:33:56.005Z",
+                      "Rating": {
+                        "Confidence": 10,
+                        "Age": 2,
+                        "Overall": 8.76923076923077
+                      },
+                      "SnippetSignature": "9c3b0cd42bfb2bfcde21669db8d9a561",
+                      "SinkLine": 16,
+                      "InputFlowSnapshots": [
+                        {
+                          "StartLine": 0,
+                          "EndLine": 0,
+                          "Line": 16
+                        }
+                      ],
+                      "FunctionCallSnapshots": [
+                        {
+                          "StartLine": 12,
+                          "EndLine": 21,
+                          "Line": 16
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "finding": {
+                  "id": "34192d71-a319-4ed7-afaa-092e355884ea",
+                  "scanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                  "appId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                  "orgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                  "groupType": "sink",
+                  "sharedStep": {
+                    "Name": "Weak Random ",
+                    "Kind": "",
+                    "File": "app/data/user-dao.js",
+                    "Snippet": "const year = Math.ceil(Math.random() * 30) + today.getFullYear();",
+                    "SnippetSignature": "a87b18a4ebfcb1687c611b6202a92d1d",
+                    "StartLine": 49,
+                    "EndLine": 58,
+                    "Line": 53
+                  },
+                  "type": {
+                    "Id": 14,
+                    "Name": "Weak Pseudo-Random",
+                    "EngineId": 8,
+                    "Language": "JavaScript / Node.js"
+                  },
+                  "description": "It is not advised to use weak random generator methods.",
+                  "severity": "Medium",
+                  "isBaseLine": true,
+                  "createdTime": "2024-01-23T17:19:07.892Z",
+                  "issues": {
+                    "Jira": {
+                      "IssueId": "",
+                      "Project": ""
+                    },
+                    "Azure": {
+                      "WorkItemId": 0,
+                      "Project": ""
+                    }
+                  },
+                  "comments": null,
+                  "rating": {
+                    "Severity": 5.536,
+                    "Confidence": 10,
+                    "Age": 0,
+                    "Overall": 4.4288
+                  },
+                  "adaptations": {
+                    "CustomSeverity": "",
+                    "IsSuppressed": false,
+                    "SuppressedBy": "",
+                    "SuppressionTime": "0001-01-01T00:00:00Z",
+                    "SuppressionMessage": "",
+                    "IsReviewed": false
+                  }
+                },
+                "DataFlows": [
+                  {
+                    "Overview": {
+                      "Id": "3cbb09f6-dc4e-4f19-b484-4d3ef85d9014",
+                      "Signature": "d64419b8760bd9999abcc7978f95dc7e",
+                      "FindingId": "34192d71-a319-4ed7-afaa-092e355884ea",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "CreatedTime": "2024-01-23T17:19:07.892Z",
+                      "Input": {
+                        "Source": "Weak Random",
+                        "Kind": "",
+                        "Flow": [
+                          {
+                            "Name": "Weak Random",
+                            "Kind": "",
+                            "File": "app/data/user-dao.js",
+                            "Snippet": "const year = Math.ceil(Math.random() * 30) + today.getFullYear();"
+                          }
+                        ]
+                      },
+                      "Sink": {
+                        "Name": "Weak Random ",
+                        "Kind": "",
+                        "File": "app/data/user-dao.js",
+                        "Snippet": "const year = Math.ceil(Math.random() * 30) + today.getFullYear();"
+                      },
+                      "FunctionCalls": [
+                        {
+                          "Name": "Weak Random - Math.random",
+                          "Kind": "",
+                          "File": "app/data/user-dao.js",
+                          "Snippet": "const year = Math.ceil(Math.random() * 30) + today.getFullYear();"
+                        }
+                      ],
+                      "Filter": {
+                        "IsFiltered": false,
+                        "FilterTypes": []
+                      }
+                    },
+                    "Snapshot": {
+                      "Id": "28b08506-7738-400e-ba43-2ba21076e432",
+                      "Signature": "d64419b8760bd9999abcc7978f95dc7e",
+                      "DataFlowId": "3cbb09f6-dc4e-4f19-b484-4d3ef85d9014",
+                      "ScanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                      "FindingId": "34192d71-a319-4ed7-afaa-092e355884ea",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "DataModelVersion": 2,
+                      "CreatedTime": "2024-01-23T17:33:56.005Z",
+                      "Rating": {
+                        "Confidence": 10,
+                        "Age": 2,
+                        "Overall": 8.76923076923077
+                      },
+                      "SnippetSignature": "484d5aaf3dc4c619acb6ed60529a580b",
+                      "SinkLine": 53,
+                      "InputFlowSnapshots": [
+                        {
+                          "StartLine": 0,
+                          "EndLine": 0,
+                          "Line": 53
+                        }
+                      ],
+                      "FunctionCallSnapshots": [
+                        {
+                          "StartLine": 49,
+                          "EndLine": 58,
+                          "Line": 53
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "finding": {
+                  "id": "e3606a4b-17c9-4348-ac2d-5c29d20698a3",
+                  "scanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                  "appId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                  "orgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                  "groupType": "sink",
+                  "sharedStep": {
+                    "Name": "Weak Random ",
+                    "Kind": "",
+                    "File": "app/data/user-dao.js",
+                    "Snippet": "const month = (Math.floor(Math.random() * 10) + today.getMonth()) % 12;",
+                    "SnippetSignature": "a23bf6b0fbb1653ea34e49f24e751b55",
+                    "StartLine": 48,
+                    "EndLine": 57,
+                    "Line": 52
+                  },
+                  "type": {
+                    "Id": 14,
+                    "Name": "Weak Pseudo-Random",
+                    "EngineId": 8,
+                    "Language": "JavaScript / Node.js"
+                  },
+                  "description": "It is not advised to use weak random generator methods.",
+                  "severity": "Medium",
+                  "isBaseLine": true,
+                  "createdTime": "2024-01-23T17:19:07.892Z",
+                  "issues": {
+                    "Jira": {
+                      "IssueId": "",
+                      "Project": ""
+                    },
+                    "Azure": {
+                      "WorkItemId": 0,
+                      "Project": ""
+                    }
+                  },
+                  "comments": null,
+                  "rating": {
+                    "Severity": 5.536,
+                    "Confidence": 10,
+                    "Age": 0,
+                    "Overall": 4.4288
+                  },
+                  "adaptations": {
+                    "CustomSeverity": "",
+                    "IsSuppressed": false,
+                    "SuppressedBy": "",
+                    "SuppressionTime": "0001-01-01T00:00:00Z",
+                    "SuppressionMessage": "",
+                    "IsReviewed": false
+                  }
+                },
+                "DataFlows": [
+                  {
+                    "Overview": {
+                      "Id": "ebfb3210-2cae-432a-95a2-b8240ac4d71d",
+                      "Signature": "78b130e73971bd2640474d39fea77a9f",
+                      "FindingId": "e3606a4b-17c9-4348-ac2d-5c29d20698a3",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "CreatedTime": "2024-01-23T17:19:07.892Z",
+                      "Input": {
+                        "Source": "Weak Random",
+                        "Kind": "",
+                        "Flow": [
+                          {
+                            "Name": "Weak Random",
+                            "Kind": "",
+                            "File": "app/data/user-dao.js",
+                            "Snippet": "const month = (Math.floor(Math.random() * 10) + today.getMonth()) % 12;"
+                          }
+                        ]
+                      },
+                      "Sink": {
+                        "Name": "Weak Random ",
+                        "Kind": "",
+                        "File": "app/data/user-dao.js",
+                        "Snippet": "const month = (Math.floor(Math.random() * 10) + today.getMonth()) % 12;"
+                      },
+                      "FunctionCalls": [
+                        {
+                          "Name": "Weak Random - Math.random",
+                          "Kind": "",
+                          "File": "app/data/user-dao.js",
+                          "Snippet": "const month = (Math.floor(Math.random() * 10) + today.getMonth()) % 12;"
+                        }
+                      ],
+                      "Filter": {
+                        "IsFiltered": false,
+                        "FilterTypes": []
+                      }
+                    },
+                    "Snapshot": {
+                      "Id": "d92122b8-3301-4501-8d81-48b8a24748d7",
+                      "Signature": "78b130e73971bd2640474d39fea77a9f",
+                      "DataFlowId": "ebfb3210-2cae-432a-95a2-b8240ac4d71d",
+                      "ScanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                      "FindingId": "e3606a4b-17c9-4348-ac2d-5c29d20698a3",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "DataModelVersion": 2,
+                      "CreatedTime": "2024-01-23T17:33:56.005Z",
+                      "Rating": {
+                        "Confidence": 10,
+                        "Age": 2,
+                        "Overall": 8.76923076923077
+                      },
+                      "SnippetSignature": "4714f8eea2687824c4d1b0e262a37235",
+                      "SinkLine": 52,
+                      "InputFlowSnapshots": [
+                        {
+                          "StartLine": 0,
+                          "EndLine": 0,
+                          "Line": 52
+                        }
+                      ],
+                      "FunctionCallSnapshots": [
+                        {
+                          "StartLine": 48,
+                          "EndLine": 57,
+                          "Line": 52
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "finding": {
+                  "id": "014517d1-beb9-4dd6-bd7f-f2d865f0ec60",
+                  "scanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                  "appId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                  "orgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                  "groupType": "sink",
+                  "sharedStep": {
+                    "Name": "Weak Random ",
+                    "Kind": "",
+                    "File": "app/data/user-dao.js",
+                    "Snippet": "const day = (Math.floor(Math.random() * 10) + today.getDay()) % 29;",
+                    "SnippetSignature": "4b56c14293d9ef6ebcc6a0ab96067c3c",
+                    "StartLine": 47,
+                    "EndLine": 56,
+                    "Line": 51
+                  },
+                  "type": {
+                    "Id": 14,
+                    "Name": "Weak Pseudo-Random",
+                    "EngineId": 8,
+                    "Language": "JavaScript / Node.js"
+                  },
+                  "description": "It is not advised to use weak random generator methods.",
+                  "severity": "Medium",
+                  "isBaseLine": true,
+                  "createdTime": "2024-01-23T17:19:07.892Z",
+                  "issues": {
+                    "Jira": {
+                      "IssueId": "",
+                      "Project": ""
+                    },
+                    "Azure": {
+                      "WorkItemId": 0,
+                      "Project": ""
+                    }
+                  },
+                  "comments": null,
+                  "rating": {
+                    "Severity": 5.536,
+                    "Confidence": 10,
+                    "Age": 0,
+                    "Overall": 4.4288
+                  },
+                  "adaptations": {
+                    "CustomSeverity": "",
+                    "IsSuppressed": false,
+                    "SuppressedBy": "",
+                    "SuppressionTime": "0001-01-01T00:00:00Z",
+                    "SuppressionMessage": "",
+                    "IsReviewed": false
+                  }
+                },
+                "DataFlows": [
+                  {
+                    "Overview": {
+                      "Id": "332fb42b-7169-48d1-b016-f3d949d6ebe4",
+                      "Signature": "c8716404e5c3a044615ee9015f6ae920",
+                      "FindingId": "014517d1-beb9-4dd6-bd7f-f2d865f0ec60",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "CreatedTime": "2024-01-23T17:19:07.892Z",
+                      "Input": {
+                        "Source": "Weak Random",
+                        "Kind": "",
+                        "Flow": [
+                          {
+                            "Name": "Weak Random",
+                            "Kind": "",
+                            "File": "app/data/user-dao.js",
+                            "Snippet": "const day = (Math.floor(Math.random() * 10) + today.getDay()) % 29;"
+                          }
+                        ]
+                      },
+                      "Sink": {
+                        "Name": "Weak Random ",
+                        "Kind": "",
+                        "File": "app/data/user-dao.js",
+                        "Snippet": "const day = (Math.floor(Math.random() * 10) + today.getDay()) % 29;"
+                      },
+                      "FunctionCalls": [
+                        {
+                          "Name": "Weak Random - Math.random",
+                          "Kind": "",
+                          "File": "app/data/user-dao.js",
+                          "Snippet": "const day = (Math.floor(Math.random() * 10) + today.getDay()) % 29;"
+                        }
+                      ],
+                      "Filter": {
+                        "IsFiltered": false,
+                        "FilterTypes": []
+                      }
+                    },
+                    "Snapshot": {
+                      "Id": "861a612a-4f78-44de-89b2-d59dc61c4b38",
+                      "Signature": "c8716404e5c3a044615ee9015f6ae920",
+                      "DataFlowId": "332fb42b-7169-48d1-b016-f3d949d6ebe4",
+                      "ScanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                      "FindingId": "014517d1-beb9-4dd6-bd7f-f2d865f0ec60",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "DataModelVersion": 2,
+                      "CreatedTime": "2024-01-23T17:33:56.005Z",
+                      "Rating": {
+                        "Confidence": 10,
+                        "Age": 2,
+                        "Overall": 8.76923076923077
+                      },
+                      "SnippetSignature": "8c785a38aa11474111f72591cd44e835",
+                      "SinkLine": 51,
+                      "InputFlowSnapshots": [
+                        {
+                          "StartLine": 0,
+                          "EndLine": 0,
+                          "Line": 51
+                        }
+                      ],
+                      "FunctionCallSnapshots": [
+                        {
+                          "StartLine": 47,
+                          "EndLine": 56,
+                          "Line": 51
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "finding": {
+                  "id": "36123ef6-bdc3-49e9-998e-02bc801d1e93",
+                  "scanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                  "appId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                  "orgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                  "groupType": "sink",
+                  "sharedStep": {
+                    "Name": "Weak Random ",
+                    "Kind": "",
+                    "File": "artifacts/db-reset.js",
+                    "Snippet": "const funds = Math.floor((Math.random() * 40) + 1);",
+                    "SnippetSignature": "2c91628a6d735eb8d84ece18dfcce91b",
+                    "StartLine": 110,
+                    "EndLine": 119,
+                    "Line": 114
+                  },
+                  "type": {
+                    "Id": 14,
+                    "Name": "Weak Pseudo-Random",
+                    "EngineId": 8,
+                    "Language": "JavaScript / Node.js"
+                  },
+                  "description": "It is not advised to use weak random generator methods.",
+                  "severity": "Medium",
+                  "isBaseLine": true,
+                  "createdTime": "2024-01-23T17:19:07.892Z",
+                  "issues": {
+                    "Jira": {
+                      "IssueId": "",
+                      "Project": ""
+                    },
+                    "Azure": {
+                      "WorkItemId": 0,
+                      "Project": ""
+                    }
+                  },
+                  "comments": null,
+                  "rating": {
+                    "Severity": 5.536,
+                    "Confidence": 10,
+                    "Age": 0,
+                    "Overall": 4.4288
+                  },
+                  "adaptations": {
+                    "CustomSeverity": "",
+                    "IsSuppressed": false,
+                    "SuppressedBy": "",
+                    "SuppressionTime": "0001-01-01T00:00:00Z",
+                    "SuppressionMessage": "",
+                    "IsReviewed": false
+                  }
+                },
+                "DataFlows": [
+                  {
+                    "Overview": {
+                      "Id": "f25d6a1e-2d03-4657-ab0c-c3e8ae6bf131",
+                      "Signature": "fcd5eecdfcfaa1a6e1c029692d85e6da",
+                      "FindingId": "36123ef6-bdc3-49e9-998e-02bc801d1e93",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "CreatedTime": "2024-01-23T17:19:07.892Z",
+                      "Input": {
+                        "Source": "Weak Random",
+                        "Kind": "",
+                        "Flow": [
+                          {
+                            "Name": "Weak Random",
+                            "Kind": "",
+                            "File": "artifacts/db-reset.js",
+                            "Snippet": "const funds = Math.floor((Math.random() * 40) + 1);"
+                          }
+                        ]
+                      },
+                      "Sink": {
+                        "Name": "Weak Random ",
+                        "Kind": "",
+                        "File": "artifacts/db-reset.js",
+                        "Snippet": "const funds = Math.floor((Math.random() * 40) + 1);"
+                      },
+                      "FunctionCalls": [
+                        {
+                          "Name": "Weak Random - Math.random",
+                          "Kind": "",
+                          "File": "artifacts/db-reset.js",
+                          "Snippet": "const funds = Math.floor((Math.random() * 40) + 1);"
+                        }
+                      ],
+                      "Filter": {
+                        "IsFiltered": false,
+                        "FilterTypes": []
+                      }
+                    },
+                    "Snapshot": {
+                      "Id": "94eb09c4-3071-44bc-ba47-b1ae1656bc33",
+                      "Signature": "fcd5eecdfcfaa1a6e1c029692d85e6da",
+                      "DataFlowId": "f25d6a1e-2d03-4657-ab0c-c3e8ae6bf131",
+                      "ScanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                      "FindingId": "36123ef6-bdc3-49e9-998e-02bc801d1e93",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "DataModelVersion": 2,
+                      "CreatedTime": "2024-01-23T17:33:56.005Z",
+                      "Rating": {
+                        "Confidence": 10,
+                        "Age": 2,
+                        "Overall": 8.76923076923077
+                      },
+                      "SnippetSignature": "93d88b939300743c615fcaccd63fc075",
+                      "SinkLine": 114,
+                      "InputFlowSnapshots": [
+                        {
+                          "StartLine": 0,
+                          "EndLine": 0,
+                          "Line": 114
+                        }
+                      ],
+                      "FunctionCallSnapshots": [
+                        {
+                          "StartLine": 110,
+                          "EndLine": 119,
+                          "Line": 114
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "finding": {
+                  "id": "a8aee415-f0c5-4b07-a1a4-fadd2efe000c",
+                  "scanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                  "appId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                  "orgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                  "groupType": "sink",
+                  "sharedStep": {
+                    "Name": "Weak Random ",
+                    "Kind": "",
+                    "File": "artifacts/db-reset.js",
+                    "Snippet": "const stocks = Math.floor((Math.random() * 40) + 1);",
+                    "SnippetSignature": "be537fbf1921d478feb0d70988e06788",
+                    "StartLine": 109,
+                    "EndLine": 118,
+                    "Line": 113
+                  },
+                  "type": {
+                    "Id": 14,
+                    "Name": "Weak Pseudo-Random",
+                    "EngineId": 8,
+                    "Language": "JavaScript / Node.js"
+                  },
+                  "description": "It is not advised to use weak random generator methods.",
+                  "severity": "Medium",
+                  "isBaseLine": true,
+                  "createdTime": "2024-01-23T17:19:07.892Z",
+                  "issues": {
+                    "Jira": {
+                      "IssueId": "",
+                      "Project": ""
+                    },
+                    "Azure": {
+                      "WorkItemId": 0,
+                      "Project": ""
+                    }
+                  },
+                  "comments": null,
+                  "rating": {
+                    "Severity": 5.536,
+                    "Confidence": 10,
+                    "Age": 0,
+                    "Overall": 4.4288
+                  },
+                  "adaptations": {
+                    "CustomSeverity": "",
+                    "IsSuppressed": false,
+                    "SuppressedBy": "",
+                    "SuppressionTime": "0001-01-01T00:00:00Z",
+                    "SuppressionMessage": "",
+                    "IsReviewed": false
+                  }
+                },
+                "DataFlows": [
+                  {
+                    "Overview": {
+                      "Id": "f0fb4ebd-0111-4b8d-bf7d-0225124243ad",
+                      "Signature": "6917486b04a97798e0d9b2ae8254ed0b",
+                      "FindingId": "a8aee415-f0c5-4b07-a1a4-fadd2efe000c",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "CreatedTime": "2024-01-23T17:19:07.892Z",
+                      "Input": {
+                        "Source": "Weak Random",
+                        "Kind": "",
+                        "Flow": [
+                          {
+                            "Name": "Weak Random",
+                            "Kind": "",
+                            "File": "artifacts/db-reset.js",
+                            "Snippet": "const stocks = Math.floor((Math.random() * 40) + 1);"
+                          }
+                        ]
+                      },
+                      "Sink": {
+                        "Name": "Weak Random ",
+                        "Kind": "",
+                        "File": "artifacts/db-reset.js",
+                        "Snippet": "const stocks = Math.floor((Math.random() * 40) + 1);"
+                      },
+                      "FunctionCalls": [
+                        {
+                          "Name": "Weak Random - Math.random",
+                          "Kind": "",
+                          "File": "artifacts/db-reset.js",
+                          "Snippet": "const stocks = Math.floor((Math.random() * 40) + 1);"
+                        }
+                      ],
+                      "Filter": {
+                        "IsFiltered": false,
+                        "FilterTypes": []
+                      }
+                    },
+                    "Snapshot": {
+                      "Id": "6c88dfee-6212-4396-a7e9-1b8b33f79e17",
+                      "Signature": "6917486b04a97798e0d9b2ae8254ed0b",
+                      "DataFlowId": "f0fb4ebd-0111-4b8d-bf7d-0225124243ad",
+                      "ScanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                      "FindingId": "a8aee415-f0c5-4b07-a1a4-fadd2efe000c",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "DataModelVersion": 2,
+                      "CreatedTime": "2024-01-23T17:33:56.005Z",
+                      "Rating": {
+                        "Confidence": 10,
+                        "Age": 2,
+                        "Overall": 8.76923076923077
+                      },
+                      "SnippetSignature": "4e073dc4765efc685e1540ea92c208a6",
+                      "SinkLine": 113,
+                      "InputFlowSnapshots": [
+                        {
+                          "StartLine": 0,
+                          "EndLine": 0,
+                          "Line": 113
+                        }
+                      ],
+                      "FunctionCallSnapshots": [
+                        {
+                          "StartLine": 109,
+                          "EndLine": 118,
+                          "Line": 113
+                        }
+                      ]
+                    }
+                  }
+                ]
+              },
+              {
+                "finding": {
+                  "id": "251da9c6-b993-4428-af8c-93bd3098fffa",
+                  "scanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                  "appId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                  "orgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                  "groupType": "sink",
+                  "sharedStep": {
+                    "Name": "Weak Random ",
+                    "Kind": "",
+                    "File": "artifacts/db-reset.js",
+                    "Snippet": "data.ops.forEach((user) =\u003e {",
+                    "SnippetSignature": "846d3ae70bedd0e2e38a1bfa21c77eee",
+                    "StartLine": 108,
+                    "EndLine": 117,
+                    "Line": 112
+                  },
+                  "type": {
+                    "Id": 14,
+                    "Name": "Weak Pseudo-Random",
+                    "EngineId": 8,
+                    "Language": "JavaScript / Node.js"
+                  },
+                  "description": "It is not advised to use weak random generator methods.",
+                  "severity": "Medium",
+                  "isBaseLine": true,
+                  "createdTime": "2024-01-23T17:19:07.892Z",
+                  "issues": {
+                    "Jira": {
+                      "IssueId": "",
+                      "Project": ""
+                    },
+                    "Azure": {
+                      "WorkItemId": 0,
+                      "Project": ""
+                    }
+                  },
+                  "comments": null,
+                  "rating": {
+                    "Severity": 5.536,
+                    "Confidence": 10,
+                    "Age": 0,
+                    "Overall": 4.4288
+                  },
+                  "adaptations": {
+                    "CustomSeverity": "",
+                    "IsSuppressed": false,
+                    "SuppressedBy": "",
+                    "SuppressionTime": "0001-01-01T00:00:00Z",
+                    "SuppressionMessage": "",
+                    "IsReviewed": false
+                  }
+                },
+                "DataFlows": [
+                  {
+                    "Overview": {
+                      "Id": "3fd14d67-29d2-41a1-ae6b-bdfe50fcf099",
+                      "Signature": "861dcdf12e1500ff711af89e81bcb83d",
+                      "FindingId": "251da9c6-b993-4428-af8c-93bd3098fffa",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "CreatedTime": "2024-01-23T17:19:07.892Z",
+                      "Input": {
+                        "Source": "Weak Random",
+                        "Kind": "",
+                        "Flow": [
+                          {
+                            "Name": "Weak Random",
+                            "Kind": "",
+                            "File": "artifacts/db-reset.js",
+                            "Snippet": "data.ops.forEach((user) =\u003e {"
+                          }
+                        ]
+                      },
+                      "Sink": {
+                        "Name": "Weak Random ",
+                        "Kind": "",
+                        "File": "artifacts/db-reset.js",
+                        "Snippet": "data.ops.forEach((user) =\u003e {"
+                      },
+                      "FunctionCalls": [
+                        {
+                          "Name": "Weak Random - Math.random",
+                          "Kind": "",
+                          "File": "artifacts/db-reset.js",
+                          "Snippet": "data.ops.forEach((user) =\u003e {"
+                        }
+                      ],
+                      "Filter": {
+                        "IsFiltered": false,
+                        "FilterTypes": []
+                      }
+                    },
+                    "Snapshot": {
+                      "Id": "33c79d43-7c86-4a6e-ad91-12093ba52d97",
+                      "Signature": "861dcdf12e1500ff711af89e81bcb83d",
+                      "DataFlowId": "3fd14d67-29d2-41a1-ae6b-bdfe50fcf099",
+                      "ScanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                      "FindingId": "251da9c6-b993-4428-af8c-93bd3098fffa",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "DataModelVersion": 2,
+                      "CreatedTime": "2024-01-23T17:33:56.005Z",
+                      "Rating": {
+                        "Confidence": 10,
+                        "Age": 2,
+                        "Overall": 8.76923076923077
+                      },
+                      "SnippetSignature": "21ff13a5b5d02e7d50095c1fe860f29e",
+                      "SinkLine": 112,
+                      "InputFlowSnapshots": [
+                        {
+                          "StartLine": 0,
+                          "EndLine": 0,
+                          "Line": 112
+                        }
+                      ],
+                      "FunctionCallSnapshots": [
+                        {
+                          "StartLine": 108,
+                          "EndLine": 117,
+                          "Line": 112
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": {
+              "id": 15,
+              "sarif": "js-misc",
+              "order": 9,
+              "name": "Miscellaneous Dangerous Functions",
+              "risk": "Medium",
+              "description": "Miscellaneous dangerous functions are functions that could introduce a vulnerability of an unpredictable security impact if they are used incorrectly. Functions like LoadLibrary or printStackTrace could result in arbitrary code execution or information disclosure",
+              "recommendation": [
+                "Avoid use of potentially dangerous or depreciated functions"
+              ],
+              "references": [
+                "https://cwe.mitre.org/data/definitions/676.html"
+              ],
+              "cwe": {
+                "id": "CWE-676",
+                "title": "CWE-676: Use of Potentially Dangerous Function",
+                "url": "https://cwe.mitre.org/data/definitions/676.html"
+              },
+              "pcidss": {
+                "section": "",
+                "title": ""
+              },
+              "nist": {
+                "control": "",
+                "priority": "",
+                "title": "",
+                "url": ""
+              },
+              "hipaa": {
+                "control": "",
+                "title": ""
+              },
+              "hitrust": {
+                "control": "",
+                "title": ""
+              },
+              "owasp": {
+                "index": "",
+                "title": "",
+                "url": ""
+              },
+              "owasp2021": {
+                "index": "",
+                "title": "",
+                "url": ""
+              },
+              "capec": {
+                "id": "",
+                "title": "",
+                "url": ""
+              },
+              "sansTop25": {
+                "rank": 0,
+                "title": ""
+              }
+            },
+            "count": 0,
+            "remediationCount": 0,
+            "countWithFP": 0,
+            "Findings": null
+          },
+          {
+            "type": {
+              "id": 11,
+              "sarif": "js-regex-dos",
+              "order": 10,
+              "name": "Regex Denial of Service (ReDoS)",
+              "risk": "Medium",
+              "description": "Regular expression Denial of Service (ReDoS) is a Denial of Service attack, that exploits the fact that most Regular Expression implementations may reach extreme situations that cause them to work very slowly (exponentially related to input size). An attacker can then cause a program using a Regular Expression to enter these extreme situations and then hang for a very long time, affecting the availability of the application",
+              "recommendation": [
+                "Do not pass untrusted user input to functions that perform regular expression searches"
+              ],
+              "references": [
+                "https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS"
+              ],
+              "cwe": {
+                "id": "CWE-400",
+                "title": "CWE-400: Uncontrolled Resource Consumption",
+                "url": "https://cwe.mitre.org/data/definitions/400.html"
+              },
+              "pcidss": {
+                "section": "",
+                "title": ""
+              },
+              "nist": {
+                "control": "SC-5",
+                "priority": "P1",
+                "title": "SC-5: Denial of Service Protection",
+                "url": "https://nvd.nist.gov/800-53/Rev5/control/SC-5"
+              },
+              "hipaa": {
+                "control": "",
+                "title": ""
+              },
+              "hitrust": {
+                "control": "10.b",
+                "title": "10.b - Input Data Validation (Level 1 Implementation)"
+              },
+              "owasp": {
+                "index": "",
+                "title": "",
+                "url": ""
+              },
+              "owasp2021": {
+                "index": "",
+                "title": "",
+                "url": ""
+              },
+              "capec": {
+                "id": "492",
+                "title": "CAPEC-492: Regular Expression Exponential Blowup",
+                "url": "https://capec.mitre.org/data/definitions/492.html"
+              },
+              "sansTop25": {
+                "rank": 20,
+                "title": "CWE-400: Uncontrolled Resource Consumption"
+              }
+            },
+            "count": 0,
+            "remediationCount": 0,
+            "countWithFP": 0,
+            "Findings": null
+          },
+          {
+            "type": {
+              "id": 8,
+              "sarif": "js-redirect",
+              "order": 11,
+              "name": "Unvalidated/Open Redirect",
+              "risk": "Low",
+              "description": "Open Redirect vulnerability occurs when untrusted user input is passed to HTTP location redirect functions or properties. By modifying untrusted URL input to a malicious site, an attacker may successfully launch a phishing scam and steal user credentials. Because the server name in the modified link is identical to the original site, phishing attempts may have a more trustworthy appearance",
+              "recommendation": [
+                "Do not pass untrusted user input to location redirection functions or properties"
+              ],
+              "references": [
+                "https://www.owasp.org/index.php/Unvalidated_Redirects_and_Forwards_Cheat_Sheet"
+              ],
+              "cwe": {
+                "id": "CWE-601",
+                "title": "CWE-601: URL Redirection to Untrusted Site ('Open Redirect')",
+                "url": "https://cwe.mitre.org/data/definitions/601.html"
+              },
+              "pcidss": {
+                "section": "",
+                "title": ""
+              },
+              "nist": {
+                "control": "SI-10",
+                "priority": "P1",
+                "title": "SI-10: Information Input Validation",
+                "url": "https://nvd.nist.gov/800-53/Rev5/control/SI-10"
+              },
+              "hipaa": {
+                "control": "",
+                "title": ""
+              },
+              "hitrust": {
+                "control": "10.b",
+                "title": "10.b - Input Data Validation (Level 1 Implementation)"
+              },
+              "owasp": {
+                "index": "",
+                "title": "",
+                "url": ""
+              },
+              "owasp2021": {
+                "index": "A1",
+                "title": "A1 - Broken Access Control",
+                "url": "https://owasp.org/Top10/A01_2021-Broken_Access_Control/"
+              },
+              "capec": {
+                "id": "194",
+                "title": "CAPEC-194: Fake the Source of Data",
+                "url": "https://capec.mitre.org/data/definitions/194.html"
+              },
+              "sansTop25": {
+                "rank": 0,
+                "title": ""
+              }
+            },
+            "count": 1,
+            "remediationCount": 0,
+            "countWithFP": 1,
+            "Findings": [
+              {
+                "finding": {
+                  "id": "3eafd244-5722-43ea-b64d-cfa56ba9c85a",
+                  "scanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                  "appId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                  "orgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                  "groupType": "sink",
+                  "sharedStep": {
+                    "Name": "res.redirect ",
+                    "Kind": "",
+                    "File": "app/routes/index.js",
+                    "Snippet": "return res.redirect(req.query.url);",
+                    "SnippetSignature": "cc227921cc8fc31abc0f25fa2558d28c",
+                    "StartLine": 70,
+                    "EndLine": 79,
+                    "Line": 74
+                  },
+                  "type": {
+                    "Id": 8,
+                    "Name": "Unvalidated/Open Redirect",
+                    "EngineId": 8,
+                    "Language": "JavaScript / Node.js"
+                  },
+                  "description": "redirect method could be abused for Open Redirection attack.",
+                  "severity": "Low",
+                  "isBaseLine": true,
+                  "createdTime": "2024-01-23T17:19:07.892Z",
+                  "issues": {
+                    "Jira": {
+                      "IssueId": "",
+                      "Project": ""
+                    },
+                    "Azure": {
+                      "WorkItemId": 0,
+                      "Project": ""
+                    }
+                  },
+                  "comments": null,
+                  "rating": {
+                    "Severity": 3.107,
+                    "Confidence": 10,
+                    "Age": 0,
+                    "Overall": 2.4856000000000003
+                  },
+                  "adaptations": {
+                    "CustomSeverity": "",
+                    "IsSuppressed": false,
+                    "SuppressedBy": "",
+                    "SuppressionTime": "0001-01-01T00:00:00Z",
+                    "SuppressionMessage": "",
+                    "IsReviewed": false
+                  }
+                },
+                "DataFlows": [
+                  {
+                    "Overview": {
+                      "Id": "5b8d5867-4a5f-4ef9-97bc-d3efafb53295",
+                      "Signature": "c17a45de607543e0119386afcd639016",
+                      "FindingId": "3eafd244-5722-43ea-b64d-cfa56ba9c85a",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "CreatedTime": "2024-01-23T17:19:07.892Z",
+                      "Input": {
+                        "Source": "req.query",
+                        "Kind": "",
+                        "Flow": [
+                          {
+                            "Name": "req.query",
+                            "Kind": "",
+                            "File": "app/routes/index.js",
+                            "Snippet": "return res.redirect(req.query.url);"
+                          }
+                        ]
+                      },
+                      "Sink": {
+                        "Name": "res.redirect ",
+                        "Kind": "",
+                        "File": "app/routes/index.js",
+                        "Snippet": "return res.redirect(req.query.url);"
+                      },
+                      "FunctionCalls": [
+                        {
+                          "Name": "res.redirect",
+                          "Kind": "",
+                          "File": "app/routes/index.js",
+                          "Snippet": "return res.redirect(req.query.url);"
+                        }
+                      ],
+                      "Filter": {
+                        "IsFiltered": false,
+                        "FilterTypes": []
+                      }
+                    },
+                    "Snapshot": {
+                      "Id": "b5ef09f0-dbb7-4466-858f-80482fd7d45a",
+                      "Signature": "c17a45de607543e0119386afcd639016",
+                      "DataFlowId": "5b8d5867-4a5f-4ef9-97bc-d3efafb53295",
+                      "ScanId": "c2fee668-7f43-4383-88a5-7efc55c162c8",
+                      "FindingId": "3eafd244-5722-43ea-b64d-cfa56ba9c85a",
+                      "AppId": "80c6655d-7a67-4885-a729-4beb4aeceb6d",
+                      "OrgId": "5f17ae01-cd01-48c9-8f87-c831b5b72cc4",
+                      "DataModelVersion": 2,
+                      "CreatedTime": "2024-01-23T17:33:56.005Z",
+                      "Rating": {
+                        "Confidence": 10,
+                        "Age": 2,
+                        "Overall": 8.76923076923077
+                      },
+                      "SnippetSignature": "7a1d4cec2f0a75e2870e1f4ec4144991",
+                      "SinkLine": 74,
+                      "InputFlowSnapshots": [
+                        {
+                          "StartLine": 70,
+                          "EndLine": 79,
+                          "Line": 74
+                        }
+                      ],
+                      "FunctionCallSnapshots": [
+                        {
+                          "StartLine": 70,
+                          "EndLine": 79,
+                          "Line": 74
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": {
+              "id": 10,
+              "sarif": "js-log-forge",
+              "order": 12,
+              "name": "Log Forging",
+              "risk": "Low",
+              "description": "Log Forging vulnerability occurs when an application either does not neutralize (sanitize) or it incorrectly neutralizes output that is written to logs. This can allow an attacker to forge log entries or inject malicious content into log records",
+              "recommendation": [
+                "Validating and encoding all input that could be outputed in the log file"
+              ],
+              "references": [
+                "https://www.owasp.org/index.php/Log_Injection"
+              ],
+              "cwe": {
+                "id": "CWE-117",
+                "title": "CWE-117: Improper Output Neutralization for Logs",
+                "url": "https://cwe.mitre.org/data/definitions/117.html"
+              },
+              "pcidss": {
+                "section": "",
+                "title": ""
+              },
+              "nist": {
+                "control": "SI-10",
+                "priority": "P1",
+                "title": "SI-10: Information Input Validation",
+                "url": "https://nvd.nist.gov/800-53/Rev5/control/SI-10"
+              },
+              "hipaa": {
+                "control": "",
+                "title": ""
+              },
+              "hitrust": {
+                "control": "",
+                "title": ""
+              },
+              "owasp": {
+                "index": "",
+                "title": "",
+                "url": ""
+              },
+              "owasp2021": {
+                "index": "A9",
+                "title": "A9 - Security Logging and Monitoring Failures",
+                "url": "https://owasp.org/Top10/A09_2021-Security_Logging_and_Monitoring_Failures/"
+              },
+              "capec": {
+                "id": "93",
+                "title": "CAPEC-93: Log Injection-Tampering-Forging",
+                "url": "https://capec.mitre.org/data/definitions/93.html"
+              },
+              "sansTop25": {
+                "rank": 0,
+                "title": ""
+              }
+            },
+            "count": 0,
+            "remediationCount": 0,
+            "countWithFP": 0,
+            "Findings": null
+          },
+          {
+            "type": {
+              "id": 7,
+              "sarif": "js-header-inj",
+              "order": 13,
+              "name": "HTTP Header Injection",
+              "risk": "Low",
+              "description": "HTTP header injection is a general class of web application security vulnerability which occurs when HTTP headers are dynamically generated based on user input. Header injection in HTTP responses can allow for HTTP response splitting, Session fixation via the Set-Cookie header, cross-site scripting (XSS), and malicious redirect attacks via the location header",
+              "recommendation": [
+                "Do not pass untrusted user input to functions that affect response header content"
+              ],
+              "references": [
+                "https://cwe.mitre.org/data/definitions/113.html"
+              ],
+              "cwe": {
+                "id": "CWE-113",
+                "title": "CWE-113: Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Response Splitting')",
+                "url": "https://cwe.mitre.org/data/definitions/113.html"
+              },
+              "pcidss": {
+                "section": "",
+                "title": ""
+              },
+              "nist": {
+                "control": "SI-10",
+                "priority": "P1",
+                "title": "SI-10: Information Input Validation",
+                "url": "https://nvd.nist.gov/800-53/Rev5/control/SI-10"
+              },
+              "hipaa": {
+                "control": "",
+                "title": ""
+              },
+              "hitrust": {
+                "control": "10.b",
+                "title": "10.b - Input Data Validation (Level 1 Implementation)"
+              },
+              "owasp": {
+                "index": "",
+                "title": "",
+                "url": ""
+              },
+              "owasp2021": {
+                "index": "A3",
+                "title": "A3 - Injection",
+                "url": "https://owasp.org/Top10/A03_2021-Injection/"
+              },
+              "capec": {
+                "id": "",
+                "title": "",
+                "url": ""
+              },
+              "sansTop25": {
+                "rank": 0,
+                "title": ""
+              }
+            },
+            "count": 0,
+            "remediationCount": 0,
+            "countWithFP": 0,
+            "Findings": null
+          },
+          {
+            "type": {
+              "id": 6,
+              "sarif": "js-resp-split",
+              "order": 14,
+              "name": "HTTP Response Splitting",
+              "risk": "Low",
+              "description": "HTTP Response Splitting vulnerability occurs when a user input that contains CR (carriage return, also represented by %0d or \\r) and LF (line feed, also represented by %0a or \\n) characters is included in the web application HTTP response headers. The failure to remove CRs and LFs allows an attacker to set arbitrary headers, take control of the body, or break the response into two or more separate responses and allow for different types of attacks such as Cross Site Scripting, cross-user defacement, web cache poisoning and similar exploits",
+              "recommendation": [
+                "Remove CRs and LFs (and all other hazardous characters) before embedding data into any HTTP response header, particularly when setting cookies and redirecting",
+                "Use a whitelist of acceptable inputs that strictly conform to specifications",
+                "When performing input validation, consider all potentially relevant properties, including length, type of input, the full range of acceptable values, missing or extra inputs, syntax, consistency across related fields"
+              ],
+              "references": [
+                "https://www.owasp.org/index.php/HTTP_Response_Splitting"
+              ],
+              "cwe": {
+                "id": "CWE-113",
+                "title": "CWE-113: Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Response Splitting')",
+                "url": "https://cwe.mitre.org/data/definitions/113.html"
+              },
+              "pcidss": {
+                "section": "",
+                "title": ""
+              },
+              "nist": {
+                "control": "SI-10",
+                "priority": "P1",
+                "title": "SI-10: Information Input Validation",
+                "url": "https://nvd.nist.gov/800-53/Rev5/control/SI-10"
+              },
+              "hipaa": {
+                "control": "",
+                "title": ""
+              },
+              "hitrust": {
+                "control": "10.b",
+                "title": "10.b - Input Data Validation (Level 1 Implementation)"
+              },
+              "owasp": {
+                "index": "",
+                "title": "",
+                "url": ""
+              },
+              "owasp2021": {
+                "index": "A3",
+                "title": "A3 - Injection",
+                "url": "https://owasp.org/Top10/A03_2021-Injection/"
+              },
+              "capec": {
+                "id": "34",
+                "title": "CAPEC-34: HTTP Response Splitting",
+                "url": "https://capec.mitre.org/data/definitions/34.html"
+              },
+              "sansTop25": {
+                "rank": 0,
+                "title": ""
+              }
+            },
+            "count": 0,
+            "remediationCount": 0,
+            "countWithFP": 0,
+            "Findings": null
+          },
+          {
+            "type": {
+              "id": 13,
+              "sarif": "js-dangerous-func",
+              "order": 15,
+              "name": "Use of Inherently Dangerous Function",
+              "risk": "Low",
+              "description": "The application calls a function that can never be guaranteed to work safely. Certain functions behave in dangerous ways regardless of how they are used. Functions in this category were often implemented without taking security concerns into account",
+              "recommendation": [
+                "Ban the use of dangerous functions. Use their safe equivalent"
+              ],
+              "references": [
+                "https://cwe.mitre.org/data/definitions/242.html"
+              ],
+              "cwe": {
+                "id": "CWE-242",
+                "title": "CWE-242: Use of Inherently Dangerous Function",
+                "url": "https://cwe.mitre.org/data/definitions/242.html"
+              },
+              "pcidss": {
+                "section": "",
+                "title": ""
+              },
+              "nist": {
+                "control": "",
+                "priority": "",
+                "title": "",
+                "url": ""
+              },
+              "hipaa": {
+                "control": "",
+                "title": ""
+              },
+              "hitrust": {
+                "control": "",
+                "title": ""
+              },
+              "owasp": {
+                "index": "",
+                "title": "",
+                "url": ""
+              },
+              "owasp2021": {
+                "index": "",
+                "title": "",
+                "url": ""
+              },
+              "capec": {
+                "id": "",
+                "title": "",
+                "url": ""
+              },
+              "sansTop25": {
+                "rank": 0,
+                "title": ""
+              }
+            },
+            "count": 0,
+            "remediationCount": 0,
+            "countWithFP": 0,
+            "Findings": null
+          },
+          {
+            "type": {
+              "id": 9,
+              "sarif": "js-cookie-inj",
+              "order": 16,
+              "name": "Cookie Injection",
+              "risk": "Low",
+              "description": "The application does not validate or incorrectly validates input that can affect the control flow or data flow of a program, or in this specific case application cookies. When the application does not validate input properly, an attacker is able to craft the input in a form that is not expected by the rest of the application. This will lead to parts of the system receiving unintended input, which may result in altered control flow, arbitrary control of a resource, or arbitrary code execution",
+              "recommendation": [
+                "Assume all input is malicious. Use an \"accept known good\" input validation strategy, i.e., use a whitelist of acceptable inputs that strictly conform to specifications. Reject any input that does not strictly conform to specifications, or transform it into something that does"
+              ],
+              "references": [
+                "https://cwe.mitre.org/data/definitions/20.html"
+              ],
+              "cwe": {
+                "id": "CWE-20",
+                "title": "CWE-20: Improper Input Validation",
+                "url": "https://cwe.mitre.org/data/definitions/20.html"
+              },
+              "pcidss": {
+                "section": "",
+                "title": ""
+              },
+              "nist": {
+                "control": "SI-10",
+                "priority": "P1",
+                "title": "SI-10: Information Input Validation",
+                "url": "https://nvd.nist.gov/800-53/Rev5/control/SI-10"
+              },
+              "hipaa": {
+                "control": "",
+                "title": ""
+              },
+              "hitrust": {
+                "control": "",
+                "title": ""
+              },
+              "owasp": {
+                "index": "",
+                "title": "",
+                "url": ""
+              },
+              "owasp2021": {
+                "index": "A3",
+                "title": "A3 - Injection",
+                "url": "https://owasp.org/Top10/A03_2021-Injection/"
+              },
+              "capec": {
+                "id": "",
+                "title": "",
+                "url": ""
+              },
+              "sansTop25": {
+                "rank": 3,
+                "title": "CWE-20: Improper Input Validation"
+              }
+            },
+            "count": 0,
+            "remediationCount": 0,
+            "countWithFP": 0,
+            "Findings": null
+          },
+          {
+            "type": {
+              "id": 17,
+              "sarif": "js-xxe",
+              "order": 17,
+              "name": "XML External Entity (XXE) Injection",
+              "risk": "Medium",
+              "description": "The application processes an XML document that can contain XML entities with URIs that resolve to documents outside of the intended sphere of control, causing the application to embed incorrect documents into its output. XML documents optionally contain a Document Type Definition (DTD), which, among other features, enables the definition of XML entities. It is possible to define an entity by providing a substitution string in the form of a URI. The XML parser can access the contents of this URI and embed these contents back into the XML document for further processing",
+              "recommendation": [
+                "Many XML parsers and validators can be configured to disable external entity expansion"
+              ],
+              "references": [
+                "https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Processing"
+              ],
+              "cwe": {
+                "id": "CWE-611",
+                "title": "CWE-611: Improper Restriction of XML External Entity Reference",
+                "url": "https://cwe.mitre.org/data/definitions/611.html"
+              },
+              "pcidss": {
+                "section": "6.5.1",
+                "title": "PCI DSS 6.5.1 - Injection Flaws"
+              },
+              "nist": {
+                "control": "",
+                "priority": "",
+                "title": "",
+                "url": ""
+              },
+              "hipaa": {
+                "control": "164.312 (a)(1)",
+                "title": "164.312 (a)(1): Standard: Access control"
+              },
+              "hitrust": {
+                "control": "10.b",
+                "title": "10.b - Input Data Validation (Level 1 Implementation)"
+              },
+              "owasp": {
+                "index": "A4",
+                "title": "A4: XML External Entities (XXE)",
+                "url": "https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A4-XML_External_Entities_(XXE)"
+              },
+              "owasp2021": {
+                "index": "A5",
+                "title": "A5 - Security Misconfiguration",
+                "url": "https://owasp.org/Top10/A05_2021-Security_Misconfiguration/"
+              },
+              "capec": {
+                "id": "201",
+                "title": "CAPEC-201: Serialized Data External Linking",
+                "url": "https://capec.mitre.org/data/definitions/201.html"
+              },
+              "sansTop25": {
+                "rank": 17,
+                "title": "CWE-611: Improper Restriction of XML External Entity Reference"
+              }
+            },
+            "count": 0,
+            "remediationCount": 0,
+            "countWithFP": 0,
+            "Findings": null
+          },
+          {
+            "type": {
+              "id": 18,
+              "sarif": "js-ssrf",
+              "order": 18,
+              "name": "Server Side Request Forgery",
+              "risk": "High",
+              "description": "Server Side Request Forgery occures when the web server receives a URL or similar request from an upstream component and retrieves the contents of this URL, but it does not sufficiently ensure that the request is being sent to the expected destination. By providing URLs to unexpected hosts or ports, attackers can make it appear that the server is sending the request, possibly bypassing access controls such as firewalls that prevent the attackers from accessing the URLs directly. The server can be used as a proxy to conduct port scanning of hosts in internal networks, use other URLs such as that can access documents on the system (using file://), or use other protocols such as gopher:// or tftp://, which may provide greater control over the contents of requests",
+              "recommendation": [
+                "Use a whitelist of allowed domains and protocols from where the web server can fetch remote resources"
+              ],
+              "references": [
+                "https://www.owasp.org/index.php/Server_Side_Request_Forgery"
+              ],
+              "cwe": {
+                "id": "CWE-918",
+                "title": "CWE-918: Server-Side Request Forgery (SSRF)",
+                "url": "https://cwe.mitre.org/data/definitions/918.html"
+              },
+              "pcidss": {
+                "section": "6.5.8",
+                "title": "PCI DSS 6.5.8 - Improper Access Control"
+              },
+              "nist": {
+                "control": "SI-10",
+                "priority": "P1",
+                "title": "SI-10: Information Input Validation",
+                "url": "https://nvd.nist.gov/800-53/Rev5/control/SI-10"
+              },
+              "hipaa": {
+                "control": "164.312 (a)(1)",
+                "title": "164.312 (a)(1): Standard: Access control"
+              },
+              "hitrust": {
+                "control": "10.b",
+                "title": "10.b - Input Data Validation (Level 1 Implementation)"
+              },
+              "owasp": {
+                "index": "A3",
+                "title": "A3: Sensitive Data Exposure",
+                "url": "https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A3-Sensitive_Data_Exposure"
+              },
+              "owasp2021": {
+                "index": "A10",
+                "title": "A10 - Server-Side Request Forgery (SSRF)",
+                "url": "https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29/"
+              },
+              "capec": {
+                "id": "",
+                "title": "",
+                "url": ""
+              },
+              "sansTop25": {
+                "rank": 19,
+                "title": "CWE-918: Server-Side Request Forgery (SSRF)"
+              }
+            },
+            "count": 0,
+            "remediationCount": 0,
+            "countWithFP": 0,
+            "Findings": null
+          },
+          {
+            "type": {
+              "id": 19,
+              "sarif": "js-ldap-inj",
+              "order": 19,
+              "name": "LDAP Injection",
+              "risk": "Medium",
+              "description": "LDAP injection vulnerability occurs when an application constructs all or a part of an LDAP query using a user input, but it either does not neutralize (sanitize) or it incorrectly neutralizes special elements that could modify the intended LDAP query. Successful LDAP injection attack can result in the execution of arbitrary commands such as granting permissions to unauthorized queries and content modification inside the LDAP tree",
+              "recommendation": [
+                "Type validation (example: int userinput = Convert.ToInt32(Request.Querystring(\"userinput\"))",
+                "Pattern validation (example: string email = Regex.IsMatch(Request.Querystring(\"email\"),\"^.+@[^\\.].*\\.[a-z]{2,}$\"))",
+                "Domain values validation (example: string country = Request.Querystring(???country???) in {???USA???, ???UK???})"
+              ],
+              "references": [
+                "https://www.owasp.org/index.php/LDAP_injection"
+              ],
+              "cwe": {
+                "id": "CWE-90",
+                "title": "CWE-90: Improper Neutralization of Special Elements used in an LDAP Query ('LDAP Injection')",
+                "url": "https://cwe.mitre.org/data/definitions/90.html"
+              },
+              "pcidss": {
+                "section": "6.5.1",
+                "title": "PCI DSS 6.5.1 - Injection Flaws"
+              },
+              "nist": {
+                "control": "SI-10",
+                "priority": "P1",
+                "title": "SI-10: Information Input Validation",
+                "url": "https://nvd.nist.gov/800-53/Rev5/control/SI-10"
+              },
+              "hipaa": {
+                "control": "164.312 (a)(1)",
+                "title": "164.312 (a)(1): Standard: Access control"
+              },
+              "hitrust": {
+                "control": "10.b",
+                "title": "10.b - Input Data Validation (Level 1 Implementation)"
+              },
+              "owasp": {
+                "index": "A1",
+                "title": "A1: Injection",
+                "url": "https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A1-Injection"
+              },
+              "owasp2021": {
+                "index": "A3",
+                "title": "A3 - Injection",
+                "url": "https://owasp.org/Top10/A03_2021-Injection/"
+              },
+              "capec": {
+                "id": "136",
+                "title": "CAPEC-136: LDAP Injection",
+                "url": "https://capec.mitre.org/data/definitions/136.html"
+              },
+              "sansTop25": {
+                "rank": 0,
+                "title": ""
+              }
+            },
+            "count": 0,
+            "remediationCount": 0,
+            "countWithFP": 0,
+            "Findings": null
+          }
+        ]
+      }
+    ],
+    "complianceStandard": {}
+  }
+]
